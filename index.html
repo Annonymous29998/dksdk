@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>Pabon Engineering, Inc. | Miami, FL | Procore</title>
+  <meta name="description" content="Pabon Engineering, Inc. is a construction company based in Miami, FL and specializes in Design and Engineering, Concrete, Plumbing" />
+  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --text: #232729;
+      --muted: #6a767c;
+      --muted-2: hsl(200, 8%, 40%);
+      --border: #acb5b9;
+      --border-light: #eef0f1;
+      --border-nav: #d6dadc;
+      --bg: #f4f5f6;
+      --white: #ffffff;
+      --orange: #ff5100;
+      --blue: #2066df;
+      --link-blue: #1d5cc9;
+      --claim: hsl(218, 75%, 45%);
+      --footer: #464f53;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--text);
+      font-family: "Inter Tight", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 2rem;
+      background: var(--bg);
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, input { font: inherit; color: inherit; }
+    ul, ol { list-style: none; margin: 0; padding: 0; }
+    p { margin: 0; }
+
+    /* ========== HEADER ========== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border-light);
+      padding: 0 48px;
+    }
+    .toolbar {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px 24px;
+      max-width: 1680px;
+      min-height: 64px;
+      padding: 12px 0;
+      background: var(--white);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .brand-logo { width: 150px; height: 20px; margin-right: 12px; }
+    .network-link {
+      color: #000;
+      height: 20px;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 0.8;
+      border-left: 1px solid #000;
+      padding-left: 12px;
+      text-decoration: none;
+    }
+
+    .search-wrap {
+      flex: 1 1 auto;
+      min-width: 220px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .search-form {
+      display: flex;
+      align-items: center;
+      flex: 2;
+      padding: 2px 4px;
+      background: var(--bg);
+      border: 1px solid #e2e2e2;
+      border-radius: 40px;
+      box-shadow: none;
+    }
+    .search-field {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      min-width: 0;
+      border: none;
+    }
+    .search-field.trade { min-width: 265px; padding-left: 10px; }
+    .search-field.location { width: 100%; padding-left: 8px; }
+    .search-field svg { flex-shrink: 0; margin-right: 4px; }
+    .search-field input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      padding: 12px 8px;
+      font-weight: 500;
+      font-size: 14px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .search-field input::placeholder { color: rgba(0,0,0,.42); }
+    .search-divider {
+      width: 1px;
+      height: 28px;
+      margin: 4px;
+      background: var(--border);
+      flex-shrink: 0;
+      border: 0;
+    }
+    .search-submit {
+      position: relative;
+      left: 1px;
+      width: 46px;
+      height: 46px;
+      padding: 10px;
+      border: 0;
+      border-radius: 40px;
+      background: var(--orange);
+      color: #fff;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .search-submit:hover { filter: brightness(0.95); }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+      margin-left: auto;
+    }
+    .locale-btn {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--bg);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .locale-btn img { width: 24px; height: 24px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      padding: 0 20px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.25;
+      white-space: nowrap;
+      border: 0;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-signup {
+      background: var(--orange);
+      color: #fff;
+    }
+    .btn-signup:hover { filter: brightness(0.95); color: #fff; }
+    .btn-login {
+      background: var(--bg);
+      color: var(--text);
+    }
+    .btn-login:hover { background: #e8ebed; }
+
+    /* ========== MAIN ========== */
+    .main-wrap {
+      background: var(--white);
+      width: 100%;
+    }
+    .container {
+      width: 100%;
+      max-width: 1680px;
+      margin: 0 auto;
+      padding: 32px 60px 80px;
+    }
+
+    /* Breadcrumbs */
+    .breadcrumbs {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: 0;
+      color: var(--muted);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      padding-right: 24px;
+    }
+    .breadcrumbs a {
+      color: #1d5cc9;
+      font-weight: 400;
+      text-decoration: none;
+    }
+    .breadcrumbs a:hover { text-decoration: underline; }
+    .breadcrumbs .current {
+      color: var(--text);
+      font-weight: 400;
+      white-space: nowrap;
+    }
+    .crumb-sep {
+      display: inline-flex;
+      margin: 0 8px;
+      align-items: center;
+      color: var(--muted);
+    }
+    .crumb-sep svg { width: 8px; height: 8px; }
+
+    /* Profile */
+    .profile-header {
+      padding: 37px 0 0;
+    }
+    .profile-top {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+    }
+    .avatar-wrap {
+      border: 1px solid hsl(200, 8%, 85%);
+      height: fit-content;
+      margin: 5px 30px 5px 0;
+      padding: 5px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .avatar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 100px;
+      min-width: 100px;
+      min-height: 100px;
+      background: var(--bg);
+      color: hsl(200, 8%, 60%);
+    }
+    .profile-main { width: 100%; min-width: 0; }
+
+    .title-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 48px;
+      font-style: normal;
+    }
+    .legal-name {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 5px;
+      color: var(--muted-2);
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 2rem;
+    }
+    .legal-name svg { width: 18px; height: 18px; opacity: .7; }
+    .claim-link {
+      color: var(--claim);
+      text-decoration: underline;
+      display: block;
+      outline: 0;
+    }
+    .claim-link:hover { color: #000; }
+    .claim-link span {
+      font-size: 16px !important;
+      font-weight: 400 !important;
+      line-height: 19px;
+      text-wrap: wrap;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 40px;
+      margin: 0 12px 12px 0;
+    }
+    .meta-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-top: 8px;
+    }
+    .meta-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .meta-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+    }
+    .meta-label {
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 16px;
+      text-transform: uppercase;
+    }
+    .meta-value {
+      font-size: 14px !important;
+      font-weight: 400;
+      line-height: 20px;
+    }
+    .meta-value a {
+      color: hsl(218, 75%, 45%);
+      text-decoration: underline;
+    }
+    .meta-value a:hover { color: #000; cursor: pointer; }
+
+    .about-blurb {
+      margin-top: 10px;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+
+    /* Sticky About nav */
+    .profile-nav-wrap {
+      position: sticky;
+      top: 80px;
+      z-index: 1;
+      background: var(--white);
+      margin-top: 24px;
+    }
+    .profile-nav {
+      display: flex;
+      gap: 24px;
+      width: 100%;
+      padding: 10px 0;
+      border-bottom: 3px solid var(--border-nav);
+      margin-bottom: 0;
+      justify-content: flex-start;
+    }
+    .profile-nav a {
+      font-size: 18px;
+      font-weight: 400;
+      white-space: nowrap;
+      cursor: pointer;
+      color: var(--muted);
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -3px;
+    }
+    .profile-nav a.active {
+      color: var(--text);
+      font-weight: 400;
+    }
+
+    /* About / Trades */
+    .about-section {
+      padding: 24px 0 17px;
+    }
+    .about-section h2 {
+      margin: 0 0 12px;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 28px;
+      color: var(--text);
+    }
+    .about-section p {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      white-space: pre-line;
+      margin-bottom: 24px;
+    }
+
+    /* Bid Management ad */
+    .ad-banner {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 48px;
+      padding: 40px;
+      border-radius: 5px;
+      color: #fff;
+      background-color: #000;
+      background-image: url("assets/ad-bg.png");
+      background-repeat: no-repeat;
+      background-position: 100% center;
+      background-size: 400px 350px;
+      overflow: hidden;
+      min-height: 240px;
+    }
+    .ad-content { position: relative; z-index: 1; max-width: 60%; }
+    .ad-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0;
+    }
+    .ad-logo-link { margin-right: 12px; }
+    .ad-logo-full { width: 150px; height: 20px; }
+    .ad-logo-small { display: none; width: 25px; height: 24px; }
+    .ad-kicker {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 28px;
+      padding-bottom: 4px;
+    }
+    .ad-title {
+      margin-top: 20px;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 36px;
+    }
+    .ad-body {
+      margin: 16px 0;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+    .ad-cta {
+      color: var(--orange);
+      width: fit-content;
+      display: flex;
+      column-gap: 12px;
+      align-items: center;
+      transition: all 300ms ease;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+    .ad-cta:hover { filter: brightness(1.1); }
+    .ad-cta svg { fill: currentColor; }
+    .ad-image {
+      position: absolute;
+      top: -16.1%;
+      right: -0.02%;
+      width: 362.52px;
+      height: auto;
+      pointer-events: none;
+    }
+
+    /* Similar */
+    .similar {
+      margin-top: 32px;
+      margin-bottom: 32px;
+      border-top: 2px solid #e3e6e8;
+      padding-top: 48px;
+    }
+    .similar h3 {
+      margin: 0 0 8px;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 32px;
+    }
+    .similar-grid {
+      display: grid;
+      column-gap: 24px;
+      grid-template-columns: repeat(auto-fill, minmax(23%, auto));
+      margin-top: 16px;
+    }
+    .similar-card {
+      display: flex;
+      flex-direction: column;
+      align-content: flex-start;
+      padding-left: 0;
+      padding-right: 0;
+      margin-top: 32px;
+      min-width: 240px;
+      cursor: pointer;
+      color: inherit;
+      overflow: hidden;
+    }
+    .similar-card:hover h4 { text-decoration: underline; }
+    .similar-card h4 {
+      margin: 0;
+      color: var(--link-blue);
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 19px;
+    }
+    .similar-row {
+      display: flex;
+      align-items: flex-start;
+      margin-top: 5px;
+    }
+    .similar-row + .similar-row { margin-top: 4px; }
+    .similar-icon {
+      margin-right: 8px;
+      color: hsl(200, 8%, 15%);
+      flex-shrink: 0;
+    }
+    .similar-row span {
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.15px;
+      line-height: 20px;
+      color: hsl(200, 8%, 15%);
+    }
+
+    /* Popular Trades */
+    .trades-section {
+      margin-top: 48px;
+      margin-bottom: 80px;
+    }
+    .trades-section h2 {
+      margin: 0 0 24px;
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 2.8rem;
+    }
+    .trades-grid {
+      display: grid;
+      grid-gap: 24px;
+      grid-template-columns: repeat(5, minmax(190px, 320px));
+    }
+    .trade-card {
+      width: 300px;
+      max-width: 100%;
+      display: flex;
+      align-items: start;
+      flex-direction: column;
+    }
+    .trade-card img {
+      width: 175px !important;
+      height: 80px !important;
+      object-fit: cover;
+      border-radius: 6px;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,.08));
+    }
+    .trade-card h3 {
+      margin: 0;
+      padding-top: 16px;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 2.4rem;
+    }
+    .view-more-wrap {
+      text-align: center;
+      padding-top: 34px;
+      grid-column: 1 / -1;
+      width: 100%;
+    }
+    .view-more-wrap a {
+      text-decoration: underline;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 2.4rem;
+      color: var(--text);
+    }
+    .view-more-wrap a:hover { color: var(--link-blue); }
+
+    /* Discover */
+    .discover {
+      margin-bottom: 80px;
+    }
+    .discover h2 {
+      margin: 0 0 24px;
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 2.8rem;
+    }
+    .tabs-wrap { margin-top: 24px; }
+    .tabs {
+      display: flex;
+      overflow-x: auto;
+      border-bottom: 1px solid var(--text);
+      scrollbar-width: none;
+    }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab {
+      position: relative;
+      padding: 12px 16px;
+      min-height: 48px;
+      margin-right: 8px;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      color: var(--text);
+      font-family: "Inter Tight", sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      font-style: normal;
+      text-transform: none;
+      white-space: nowrap;
+    }
+    .tab.active { font-weight: 700; }
+    .tab.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background: var(--text);
+    }
+    .tab-panels { margin-top: 24px; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+    .type-list {
+      gap: 12px;
+      display: grid;
+      padding: 4px;
+      justify-content: space-between;
+      grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+    }
+    .type-list a {
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 2rem;
+    }
+    .type-list a:hover { text-decoration: underline; }
+
+    /* Footer */
+    .site-footer {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      max-width: 1680px;
+      width: 100%;
+      padding: 24px 48px;
+      color: var(--footer);
+      background: var(--bg);
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 24px;
+      margin-top: 0;
+    }
+    .footer-copy {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 12px;
+    }
+    .footer-links a {
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .footer-links a:hover { text-decoration: underline; }
+    .socials {
+      display: flex;
+      align-items: center;
+    }
+    .socials a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 24px;
+      fill: #464f53;
+      color: #464f53;
+    }
+    .socials a:hover {
+      fill: var(--text);
+      color: var(--text);
+    }
+    .socials a:last-child { margin-right: 0; }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1261px) {
+      .ad-image { top: -7.4%; }
+    }
+    @media (max-width: 1199px) {
+      .container { padding-left: 36px; padding-right: 36px; }
+      .ad-image { top: -6%; width: 360px; }
+    }
+    @media (max-width: 1100px) {
+      .trades-grid { grid-template-columns: repeat(3, minmax(160px, 1fr)); }
+    }
+    @media (max-width: 1089px) {
+      .ad-content { max-width: 50%; }
+      .ad-image { top: 0.5%; }
+    }
+    @media (max-width: 1041px) {
+      .ad-banner { padding: 36px 0 36px 40px; }
+      .ad-image { top: -2%; }
+    }
+    @media (max-width: 959px) {
+      .similar-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+      .similar-grid::-webkit-scrollbar { display: none; }
+      .similar-card { margin-right: 24px; }
+      .meta-row {
+        margin-top: 24px;
+        align-items: flex-start;
+        margin-bottom: 24px;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .title-row {
+        margin-top: 24px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .profile-top { flex-direction: column; }
+      .avatar-wrap { margin-right: 0; }
+      .avatar {
+        width: 80px;
+        height: 80px;
+        min-width: 80px;
+        min-height: 80px;
+      }
+      h1 {
+        font-size: 28px;
+        line-height: 36px;
+        margin-bottom: 0;
+      }
+      .about-section h2 {
+        font-size: 18px;
+        line-height: 24px;
+      }
+      .trades-grid {
+        display: flex;
+        overflow-x: auto;
+        padding: 0 20px;
+        mask-image: linear-gradient(90deg, rgba(255,255,255,0) 0%, #fff 20%, #fff 80%, rgba(255,255,255,0) 100%);
+        scrollbar-width: none;
+      }
+      .trades-grid::-webkit-scrollbar { display: none; }
+      .trade-card { min-width: 190px; width: 220px; }
+      .view-more-wrap { display: none; }
+    }
+    @media (max-width: 909px) {
+      .ad-banner {
+        padding-right: 40px;
+        background-image: none;
+      }
+      .ad-content { max-width: 100%; }
+      .ad-image, .ad-logo-full { display: none; }
+      .ad-logo-small { display: block; }
+      .ad-top { align-items: flex-start; }
+    }
+    @media (max-width: 1100px) {
+      .toolbar { flex-wrap: wrap; }
+      .search-wrap {
+        order: 3;
+        flex: 1 1 100%;
+        max-width: none;
+        margin: 0;
+      }
+      .header-actions { margin-left: 0; }
+    }
+    @media (max-width: 800px) {
+      .site-header { padding: 0 24px; }
+      .toolbar { gap: 12px 8px; }
+      .search-field.location, .search-divider { display: none; }
+      .network-link { border-left: none; padding-left: 0; font-size: 18px; }
+      .brand { flex-direction: column; align-items: flex-start; gap: 4px; }
+      .brand-logo { margin-right: 0; }
+      .btn { height: 36px; padding: 0 14px; font-size: 13px; }
+      .container { padding: 24px 16px 64px; }
+      .site-footer {
+        padding: 24px 16px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .footer-links {
+        margin-top: 24px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .profile-nav-wrap { top: 147px; }
+      .trades-section h2, .discover h2 {
+        font-size: 1.6rem;
+        line-height: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="toolbar">
+      <div class="brand">
+        <a href="#" aria-label="Procore logo">
+          <img class="brand-logo" src="assets/procore_logo.svg" alt="Procore logo" width="150" height="20" />
+        </a>
+        <a class="network-link" href="#">Network</a>
+      </div>
+
+      <div class="search-wrap">
+        <form class="search-form" role="search" aria-label="search form" action="#" onsubmit="return false;">
+          <div class="search-field trade" aria-label="Search Trade or Sector">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M16.5728 14.1341C17.3376 12.9483 17.7831 11.526 17.7831 9.99805C17.7831 5.85591 14.5126 2.49805 10.4781 2.49805C6.44366 2.49805 3.1731 5.85591 3.1731 9.99805C3.1731 14.1402 6.44366 17.498 10.4781 17.498C11.9664 17.498 13.3517 17.0406 14.5066 16.2554L19.8186 21.7091L21.8847 19.5878L16.5728 14.1341ZM10.4781 14.498C12.8988 14.498 14.8611 12.4833 14.8611 9.99805C14.8611 7.51277 12.8988 5.49805 10.4781 5.49805C8.05744 5.49805 6.0951 7.51277 6.0951 9.99805C6.0951 12.4833 8.05744 14.498 10.4781 14.498Z"></path>
+            </svg>
+            <input id="search-network-id" type="text" placeholder="Search by trade or business" aria-label="search procore construction network" />
+          </div>
+          <hr class="search-divider" />
+          <div class="search-field location" aria-label="Search Location">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M14.25 7.77273C14.25 4.72234 11.8997 2.25 9 2.25C6.10025 2.25 3.75 4.72234 3.75 7.77273C3.75 9.80571 5.5 12.4652 9 15.75C12.5 12.4652 14.25 9.80571 14.25 7.77273ZM9 9.75C10.2426 9.75 11.25 8.74264 11.25 7.5C11.25 6.25736 10.2426 5.25 9 5.25C7.75736 5.25 6.75 6.25736 6.75 7.5C6.75 8.74264 7.75736 9.75 9 9.75Z" fill="#232729"></path>
+            </svg>
+            <input type="text" placeholder="Location" aria-label="Search Location" />
+          </div>
+          <button class="search-submit" type="submit" aria-label="search button">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M16.5728 14.1341C17.3376 12.9483 17.7831 11.526 17.7831 9.99805C17.7831 5.85591 14.5126 2.49805 10.4781 2.49805C6.44366 2.49805 3.1731 5.85591 3.1731 9.99805C3.1731 14.1402 6.44366 17.498 10.4781 17.498C11.9664 17.498 13.3517 17.0406 14.5066 16.2554L19.8186 21.7091L21.8847 19.5878L16.5728 14.1341ZM10.4781 14.498C12.8988 14.498 14.8611 12.4833 14.8611 9.99805C14.8611 7.51277 12.8988 5.49805 10.4781 5.49805C8.05744 5.49805 6.0951 7.51277 6.0951 9.99805C6.0951 12.4833 8.05744 14.498 10.4781 14.498Z"></path>
+            </svg>
+          </button>
+        </form>
+      </div>
+
+      <div class="header-actions">
+        <div class="locale-btn" data-test-id="selected-locale-container">
+          <img src="assets/us-flag.png" alt="Selected Locale Logo" width="24" height="24" />
+        </div>
+        <a class="btn btn-signup" href="#">Sign Up</a>
+        <a class="btn btn-login" href="#">Log In</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-wrap" role="main">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumbs">
+          <li><a href="#">Network</a></li>
+          <li class="crumb-sep" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01"></path></svg></li>
+          <li><a href="#">United States</a></li>
+          <li class="crumb-sep" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01"></path></svg></li>
+          <li><a href="#">Florida</a></li>
+          <li class="crumb-sep" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01"></path></svg></li>
+          <li><a href="#">Miami</a></li>
+          <li class="crumb-sep" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01"></path></svg></li>
+          <li class="current"><span>Pabon Engineering, Inc.</span></li>
+        </ol>
+      </nav>
+
+      <div class="profile-header">
+        <div class="profile-top">
+          <div class="avatar-wrap">
+            <div class="avatar" aria-hidden="true">
+              <svg width="50%" height="50%" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M13 3H3V21H6V17H10V21H21V7H13V3ZM15 9H13V11H15V9ZM15 13H13V15H15V13ZM15 17H13V19H15V17ZM7 15H5V13H7V15ZM7 11H5V9H7V11ZM7 7H5V5H7V7ZM11 15H9V13H11V15ZM11 11H9V9H11V11ZM11 7H9V5H11V7ZM19 9H17V11H19V9ZM17 13H19V15H17V13ZM19 17H17V19H19V17Z"></path>
+              </svg>
+            </div>
+          </div>
+
+          <div class="profile-main">
+            <div class="title-row">
+              <div>
+                <h1>Pabon Engineering, Inc.</h1>
+                <p class="legal-name">
+                  Pabon Engineering, Inc.
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m1 17h-2v-2h2zm2.07-7.75-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25"></path></svg>
+                </p>
+              </div>
+              <a class="claim-link" href="#">
+                <span>Claim this free business page</span>
+              </a>
+            </div>
+
+            <div class="meta-row">
+              <div class="meta-item">
+                <div class="meta-icon">
+                  <svg width="41" height="41" viewBox="0 0 41 41" fill="none" aria-hidden="true">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M28.6501 18.9794C28.6501 11.1894 22.905 4.87549 15.8167 4.87549C8.72845 4.87549 2.9834 11.1894 2.9834 18.9794C2.9834 24.1713 7.26118 30.9631 15.8167 39.3518C24.3723 30.9631 28.6501 24.1713 28.6501 18.9794Z" fill="#FF5200"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M32.4582 17.7045C32.4582 10.7564 27.1048 5.125 20.4998 5.125C13.8949 5.125 8.5415 10.7564 8.5415 17.7045C8.5415 22.3352 12.5276 28.393 20.4998 35.875C28.4721 28.393 32.4582 22.3352 32.4582 17.7045ZM20.4998 22.2083C23.3303 22.2083 25.6248 19.9138 25.6248 17.0833C25.6248 14.2529 23.3303 11.9583 20.4998 11.9583C17.6694 11.9583 15.3748 14.2529 15.3748 17.0833C15.3748 19.9138 17.6694 22.2083 20.4998 22.2083Z" stroke="black" stroke-width="2"></path>
+                  </svg>
+                </div>
+                <div class="meta-text">
+                  <span class="meta-label">Address</span>
+                  <p class="meta-value">
+                    <a href="#">13028 SW 128th St, Miami, FL</a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="meta-item">
+                <div class="meta-icon">
+                  <svg width="38" height="38" viewBox="0 0 38 38" fill="none" aria-hidden="true">
+                    <g clip-path="url(#clipPhone)">
+                      <path d="M30.623 21.878C31.4848 21.878 32.3115 22.2208 32.9209 22.8301L38.2021 28.1114C38.8115 28.7208 39.1542 29.5474 39.1543 30.4092V37.417C39.1543 37.9693 38.7066 38.417 38.1543 38.417H15.3721C14.8198 38.417 14.3721 37.9693 14.3721 37.417V30.4092C14.3722 29.5474 14.7149 28.7207 15.3242 28.1114L20.6055 22.8301L20.7227 22.7188C21.3187 22.1792 22.0955 21.8781 22.9033 21.878H30.623ZM28.0293 6.00003C28.6766 5.99708 29.2989 6.25152 29.7588 6.70706L31.6738 8.60452C32.1335 9.06022 32.3935 9.6799 32.3965 10.3272L32.4082 13.0215C32.4112 13.669 32.1569 14.2911 31.7012 14.751L29.8047 16.6651C29.349 17.1249 28.7294 17.3857 28.082 17.3887L25.3867 17.4004C24.7393 17.4033 24.1171 17.1491 23.6572 16.6934L21.7432 14.7969C21.2833 14.3412 21.0235 13.7207 21.0205 13.0733L21.0078 10.3789C21.0049 9.73155 21.2592 9.10933 21.7148 8.64944L23.6123 6.73538C24.068 6.27553 24.6875 6.01567 25.335 6.01272L28.0293 6.00003Z" fill="#FF5200"></path>
+                      <path d="M1 38.418V30.1651C1 29.8988 1.10623 29.6435 1.29514 29.4558L7.07889 23.7086C7.26624 23.5225 7.51963 23.418 7.78375 23.418H16.2163C16.4804 23.418 16.7338 23.5225 16.9211 23.7086L22.7049 29.4558C22.8938 29.6435 23 29.8988 23 30.1651V38.418" stroke="black" stroke-width="2"></path>
+                      <path d="M13.3955 7.41797C13.8384 7.41622 14.2486 7.57694 14.5391 7.84082L16.5537 9.6709C16.8413 9.93216 16.9856 10.2677 16.9873 10.5977L17 13.1982C17.0016 13.5281 16.8606 13.8648 16.5762 14.1279L14.5801 15.9746C14.2926 16.2405 13.8844 16.4044 13.4414 16.4062L10.6045 16.418C10.1616 16.4197 9.75144 16.259 9.46094 15.9951L7.44629 14.165C7.15871 13.9038 7.01439 13.5683 7.0127 13.2383L7 10.6377C6.99845 10.3078 7.13938 9.97114 7.42383 9.70801L9.41992 7.86133C9.70736 7.59544 10.1156 7.43155 10.5586 7.42969L13.3955 7.41797Z" stroke="black" stroke-width="2"></path>
+                    </g>
+                    <defs><clipPath id="clipPhone"><rect width="38" height="38" fill="white"></rect></clipPath></defs>
+                  </svg>
+                </div>
+                <div class="meta-text">
+                  <span class="meta-label">Phone</span>
+                  <p class="meta-value">+17862174996</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="about-blurb">Pabon Engineering, Inc. serves the Miami, FL area and specializes in Design and Engineering, Concrete, Plumbing.</p>
+          </div>
+        </div>
+
+        <div class="profile-nav-wrap">
+          <ul class="profile-nav">
+            <li><a class="active" href="#about">About</a></li>
+          </ul>
+        </div>
+
+        <section id="about" class="about-section">
+          <h2>Trades and Services</h2>
+          <p>Concrete, Design and Engineering, Plumbing</p>
+        </section>
+
+        <aside class="ad-banner" id="business-profile-ad-banner">
+          <div class="ad-content">
+            <div class="ad-top">
+              <a class="ad-logo-link" href="#" aria-label="Procore logo">
+                <img class="ad-logo-full" src="assets/procore_logo_light.svg" alt="Procore logo" width="150" height="20" />
+                <img class="ad-logo-small" src="assets/procore-emblem-white.png" alt="Procore logo" width="25" height="24" />
+              </a>
+              <p class="ad-kicker">Bid Management</p>
+            </div>
+            <p class="ad-title">Streamline the bidding process.</p>
+            <p class="ad-body">Save time with Bid Management that lets you control scope, expand coverage, quickly compare bids and effortlessly convert bids to subcontracts.</p>
+            <a class="ad-cta" href="#" aria-label="Learn more">
+              Learn more
+              <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg>
+            </a>
+          </div>
+          <img class="ad-image" src="assets/ad-image-2.png" alt="Procore logo" width="362" />
+        </aside>
+
+        <section class="similar">
+          <h3>You might also be interested in</h3>
+          <div class="similar-grid">
+            <a class="similar-card" href="#">
+              <h4>FG Engineers</h4>
+              <div class="similar-row">
+                <span class="similar-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M13 3H3V21H6V17H10V21H21V7H13V3ZM15 9H13V11H15V9ZM15 13H13V15H15V13ZM15 17H13V19H15V17ZM7 15H5V13H7V15ZM7 11H5V9H7V11ZM7 7H5V5H7V7ZM11 15H9V13H11V15ZM11 11H9V9H11V11ZM11 7H9V5H11V7ZM19 9H17V11H19V9ZM17 13H19V15H17V13ZM19 17H17V19H19V17Z"></path></svg></span>
+                <span>Commercial, Healthcare, ...</span>
+              </div>
+              <div class="similar-row">
+                <span class="similar-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M4.9973 10.295C4.67529 10.617 4.58135 10.9256 4.59484 11.1806L4.67535 11.2611C4.79361 11.3793 4.83328 11.5466 4.79413 11.6976L4.80701 11.7127C4.81679 11.7239 4.82661 11.7343 4.83628 11.744L4.79329 11.701C4.78813 11.7204 4.78167 11.7394 4.77383 11.758C4.76588 11.7771 4.75653 11.7958 4.74587 11.8139C4.72679 11.8465 4.70319 11.8771 4.67529 11.905L3.70927 12.871C3.53145 13.0488 3.24316 13.0489 3.06536 12.8711L1.13333 10.939C0.955532 10.7612 0.955561 10.4729 1.13339 10.2951L2.0994 9.3291C2.14339 9.28511 2.19404 9.25194 2.24808 9.22959C2.25451 9.22689 2.26113 9.22447 2.26768 9.22211L2.28312 9.21692L2.30339 9.2111L2.2604 9.16811C2.27438 9.18209 2.29087 9.19613 2.3096 9.20955C2.45104 9.1739 2.60621 9.20702 2.72205 9.30906C2.9436 9.28931 3.22574 9.16866 3.54834 8.84606C4.085 8.3094 4.04926 8.05898 4.01349 7.80859L4.00743 7.76502L4.00251 7.7259C4.00102 7.71317 3.99977 7.70044 3.99869 7.68754C3.99141 7.59974 3.99476 7.50668 4.03138 7.39713C4.19234 6.91412 4.35336 6.7531 5.15835 5.9481C5.96335 5.14311 8.05637 3.69418 8.86127 3.53313C8.94336 3.51676 9.03424 3.49811 9.13272 3.47793C10.0008 3.30004 11.4557 3.00194 12.5643 3.05012L10.1493 4.17713C9.18775 4.88818 9.18778 5.63058 9.1878 6.37297C9.18769 7.11528 10.6724 9.02436 10.6724 9.02436L8.76346 10.9333C8.11943 10.3966 7.25129 9.97307 6.76825 9.81202C6.46275 9.71018 5.8023 9.49003 4.9973 10.295Z"></path><path d="M11.1497 9.5016L9.2407 11.4106L18.7855 20.9554L20.6945 19.0464L11.1497 9.5016Z"></path><path d="M10.6724 13.7968L5.42278 19.0464L7.33174 20.9554L12.5814 15.7057L10.6724 13.7968Z"></path><path d="M21.8201 10.2849C23.0631 9.04195 23.3236 7.18769 22.6034 5.68368L19.74 8.54712L17.831 6.63816L20.6945 3.77472C19.1904 3.05449 17.3362 3.31507 16.0932 4.55801C14.8503 5.80098 14.5897 7.65523 15.3099 9.15925L13.5359 10.9333L15.4448 12.8423L17.2189 11.0682C18.7229 11.7884 20.5772 11.5279 21.8201 10.2849Z"></path></svg></span>
+                <span>Electrical Design and Engineering, Fire Protection Engineering, Mechanical Design and Engineering</span>
+              </div>
+            </a>
+
+            <a class="similar-card" href="#">
+              <h4>Prekast Corp</h4>
+              <div class="similar-row">
+                <span class="similar-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M13 3H3V21H6V17H10V21H21V7H13V3ZM15 9H13V11H15V9ZM15 13H13V15H15V13ZM15 17H13V19H15V17ZM7 15H5V13H7V15ZM7 11H5V9H7V11ZM7 7H5V5H7V7ZM11 15H9V13H11V15ZM11 11H9V9H11V11ZM11 7H9V5H11V7ZM19 9H17V11H19V9ZM17 13H19V15H17V13ZM19 17H17V19H19V17Z"></path></svg></span>
+                <span>Commercial, Healthcare, ...</span>
+              </div>
+              <div class="similar-row">
+                <span class="similar-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M4.9973 10.295C4.67529 10.617 4.58135 10.9256 4.59484 11.1806L4.67535 11.2611C4.79361 11.3793 4.83328 11.5466 4.79413 11.6976L4.80701 11.7127C4.81679 11.7239 4.82661 11.7343 4.83628 11.744L4.79329 11.701C4.78813 11.7204 4.78167 11.7394 4.77383 11.758C4.76588 11.7771 4.75653 11.7958 4.74587 11.8139C4.72679 11.8465 4.70319 11.8771 4.67529 11.905L3.70927 12.871C3.53145 13.0488 3.24316 13.0489 3.06536 12.8711L1.13333 10.939C0.955532 10.7612 0.955561 10.4729 1.13339 10.2951L2.0994 9.3291C2.14339 9.28511 2.19404 9.25194 2.24808 9.22959C2.25451 9.22689 2.26113 9.22447 2.26768 9.22211L2.28312 9.21692L2.30339 9.2111L2.2604 9.16811C2.27438 9.18209 2.29087 9.19613 2.3096 9.20955C2.45104 9.1739 2.60621 9.20702 2.72205 9.30906C2.9436 9.28931 3.22574 9.16866 3.54834 8.84606C4.085 8.3094 4.04926 8.05898 4.01349 7.80859L4.00743 7.76502L4.00251 7.7259C4.00102 7.71317 3.99977 7.70044 3.99869 7.68754C3.99141 7.59974 3.99476 7.50668 4.03138 7.39713C4.19234 6.91412 4.35336 6.7531 5.15835 5.9481C5.96335 5.14311 8.05637 3.69418 8.86127 3.53313C8.94336 3.51676 9.03424 3.49811 9.13272 3.47793C10.0008 3.30004 11.4557 3.00194 12.5643 3.05012L10.1493 4.17713C9.18775 4.88818 9.18778 5.63058 9.1878 6.37297C9.18769 7.11528 10.6724 9.02436 10.6724 9.02436L8.76346 10.9333C8.11943 10.3966 7.25129 9.97307 6.76825 9.81202C6.46275 9.71018 5.8023 9.49003 4.9973 10.295Z"></path><path d="M11.1497 9.5016L9.2407 11.4106L18.7855 20.9554L20.6945 19.0464L11.1497 9.5016Z"></path><path d="M10.6724 13.7968L5.42278 19.0464L7.33174 20.9554L12.5814 15.7057L10.6724 13.7968Z"></path><path d="M21.8201 10.2849C23.0631 9.04195 23.3236 7.18769 22.6034 5.68368L19.74 8.54712L17.831 6.63816L20.6945 3.77472C19.1904 3.05449 17.3362 3.31507 16.0932 4.55801C14.8503 5.80098 14.5897 7.65523 15.3099 9.15925L13.5359 10.9333L15.4448 12.8423L17.2189 11.0682C18.7229 11.7884 20.5772 11.5279 21.8201 10.2849Z"></path></svg></span>
+                <span>Architectural Design and Engineering, Concrete, Concrete Accessories, Pre Cast Concrete</span>
+              </div>
+            </a>
+
+            <a class="similar-card" href="#">
+              <h4>ARK Concept &amp; Construction Inc.</h4>
+              <div class="similar-row">
+                <span class="similar-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M13 3H3V21H6V17H10V21H21V7H13V3ZM15 9H13V11H15V9ZM15 13H13V15H15V13ZM15 17H13V19H15V17ZM7 15H5V13H7V15ZM7 11H5V9H7V11ZM7 7H5V5H7V7ZM11 15H9V13H11V15ZM11 11H9V9H11V11ZM11 7H9V5H11V7ZM19 9H17V11H19V9ZM17 13H19V15H17V13ZM19 17H17V19H19V17Z"></path></svg></span>
+                <span>Commercial, Residential</span>
+              </div>
+              <div class="similar-row">
+                <span class="similar-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M4.9973 10.295C4.67529 10.617 4.58135 10.9256 4.59484 11.1806L4.67535 11.2611C4.79361 11.3793 4.83328 11.5466 4.79413 11.6976L4.80701 11.7127C4.81679 11.7239 4.82661 11.7343 4.83628 11.744L4.79329 11.701C4.78813 11.7204 4.78167 11.7394 4.77383 11.758C4.76588 11.7771 4.75653 11.7958 4.74587 11.8139C4.72679 11.8465 4.70319 11.8771 4.67529 11.905L3.70927 12.871C3.53145 13.0488 3.24316 13.0489 3.06536 12.8711L1.13333 10.939C0.955532 10.7612 0.955561 10.4729 1.13339 10.2951L2.0994 9.3291C2.14339 9.28511 2.19404 9.25194 2.24808 9.22959C2.25451 9.22689 2.26113 9.22447 2.26768 9.22211L2.28312 9.21692L2.30339 9.2111L2.2604 9.16811C2.27438 9.18209 2.29087 9.19613 2.3096 9.20955C2.45104 9.1739 2.60621 9.20702 2.72205 9.30906C2.9436 9.28931 3.22574 9.16866 3.54834 8.84606C4.085 8.3094 4.04926 8.05898 4.01349 7.80859L4.00743 7.76502L4.00251 7.7259C4.00102 7.71317 3.99977 7.70044 3.99869 7.68754C3.99141 7.59974 3.99476 7.50668 4.03138 7.39713C4.19234 6.91412 4.35336 6.7531 5.15835 5.9481C5.96335 5.14311 8.05637 3.69418 8.86127 3.53313C8.94336 3.51676 9.03424 3.49811 9.13272 3.47793C10.0008 3.30004 11.4557 3.00194 12.5643 3.05012L10.1493 4.17713C9.18775 4.88818 9.18778 5.63058 9.1878 6.37297C9.18769 7.11528 10.6724 9.02436 10.6724 9.02436L8.76346 10.9333C8.11943 10.3966 7.25129 9.97307 6.76825 9.81202C6.46275 9.71018 5.8023 9.49003 4.9973 10.295Z"></path><path d="M11.1497 9.5016L9.2407 11.4106L18.7855 20.9554L20.6945 19.0464L11.1497 9.5016Z"></path><path d="M10.6724 13.7968L5.42278 19.0464L7.33174 20.9554L12.5814 15.7057L10.6724 13.7968Z"></path><path d="M21.8201 10.2849C23.0631 9.04195 23.3236 7.18769 22.6034 5.68368L19.74 8.54712L17.831 6.63816L20.6945 3.77472C19.1904 3.05449 17.3362 3.31507 16.0932 4.55801C14.8503 5.80098 14.5897 7.65523 15.3099 9.15925L13.5359 10.9333L15.4448 12.8423L17.2189 11.0682C18.7229 11.7884 20.5772 11.5279 21.8201 10.2849Z"></path></svg></span>
+                <span>Cast In Place Concrete, Electrical, Electrical Design and Engineering, Mechanical Design and Engineering, ...</span>
+              </div>
+            </a>
+
+            <a class="similar-card" href="#">
+              <h4>Ballinger</h4>
+              <div class="similar-row">
+                <span class="similar-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M13 3H3V21H6V17H10V21H21V7H13V3ZM15 9H13V11H15V9ZM15 13H13V15H15V13ZM15 17H13V19H15V17ZM7 15H5V13H7V15ZM7 11H5V9H7V11ZM7 7H5V5H7V7ZM11 15H9V13H11V15ZM11 11H9V9H11V11ZM11 7H9V5H11V7ZM19 9H17V11H19V9ZM17 13H19V15H17V13ZM19 17H17V19H19V17Z"></path></svg></span>
+                <span>Commercial, Healthcare, ...</span>
+              </div>
+              <div class="similar-row">
+                <span class="similar-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M4.9973 10.295C4.67529 10.617 4.58135 10.9256 4.59484 11.1806L4.67535 11.2611C4.79361 11.3793 4.83328 11.5466 4.79413 11.6976L4.80701 11.7127C4.81679 11.7239 4.82661 11.7343 4.83628 11.744L4.79329 11.701C4.78813 11.7204 4.78167 11.7394 4.77383 11.758C4.76588 11.7771 4.75653 11.7958 4.74587 11.8139C4.72679 11.8465 4.70319 11.8771 4.67529 11.905L3.70927 12.871C3.53145 13.0488 3.24316 13.0489 3.06536 12.8711L1.13333 10.939C0.955532 10.7612 0.955561 10.4729 1.13339 10.2951L2.0994 9.3291C2.14339 9.28511 2.19404 9.25194 2.24808 9.22959C2.25451 9.22689 2.26113 9.22447 2.26768 9.22211L2.28312 9.21692L2.30339 9.2111L2.2604 9.16811C2.27438 9.18209 2.29087 9.19613 2.3096 9.20955C2.45104 9.1739 2.60621 9.20702 2.72205 9.30906C2.9436 9.28931 3.22574 9.16866 3.54834 8.84606C4.085 8.3094 4.04926 8.05898 4.01349 7.80859L4.00743 7.76502L4.00251 7.7259C4.00102 7.71317 3.99977 7.70044 3.99869 7.68754C3.99141 7.59974 3.99476 7.50668 4.03138 7.39713C4.19234 6.91412 4.35336 6.7531 5.15835 5.9481C5.96335 5.14311 8.05637 3.69418 8.86127 3.53313C8.94336 3.51676 9.03424 3.49811 9.13272 3.47793C10.0008 3.30004 11.4557 3.00194 12.5643 3.05012L10.1493 4.17713C9.18775 4.88818 9.18778 5.63058 9.1878 6.37297C9.18769 7.11528 10.6724 9.02436 10.6724 9.02436L8.76346 10.9333C8.11943 10.3966 7.25129 9.97307 6.76825 9.81202C6.46275 9.71018 5.8023 9.49003 4.9973 10.295Z"></path><path d="M11.1497 9.5016L9.2407 11.4106L18.7855 20.9554L20.6945 19.0464L11.1497 9.5016Z"></path><path d="M10.6724 13.7968L5.42278 19.0464L7.33174 20.9554L12.5814 15.7057L10.6724 13.7968Z"></path><path d="M21.8201 10.2849C23.0631 9.04195 23.3236 7.18769 22.6034 5.68368L19.74 8.54712L17.831 6.63816L20.6945 3.77472C19.1904 3.05449 17.3362 3.31507 16.0932 4.55801C14.8503 5.80098 14.5897 7.65523 15.3099 9.15925L13.5359 10.9333L15.4448 12.8423L17.2189 11.0682C18.7229 11.7884 20.5772 11.5279 21.8201 10.2849Z"></path></svg></span>
+                <span>Architectural Design and Engineering, Assessments and Studies, Design and Engineering, Electrical Design and Engineering, ...</span>
+              </div>
+            </a>
+          </div>
+        </section>
+      </div>
+
+      <section class="trades-section">
+        <h2>Popular Trades in Miami</h2>
+        <div class="trades-grid">
+          <a class="trade-card" href="#">
+            <img src="assets/trades/design.jpg" alt="" width="175" height="80" />
+            <h3>Design and Engineering</h3>
+          </a>
+          <a class="trade-card" href="#">
+            <img src="assets/trades/project-management.jpg" alt="" width="175" height="80" />
+            <h3>Project Management</h3>
+          </a>
+          <a class="trade-card" href="#">
+            <img src="assets/trades/demolition.jpg" alt="" width="175" height="80" />
+            <h3>Demolition</h3>
+          </a>
+          <a class="trade-card" href="#">
+            <img src="assets/trades/earthwork.jpg" alt="" width="175" height="80" />
+            <h3>Earthwork</h3>
+          </a>
+          <a class="trade-card" href="#">
+            <img src="assets/trades/landscaping.jpg" alt="" width="175" height="80" />
+            <h3>Landscaping</h3>
+          </a>
+          <a class="trade-card" href="#">
+            <img src="assets/trades/concrete.jpg" alt="" width="175" height="80" />
+            <h3>Concrete</h3>
+          </a>
+          <a class="trade-card" href="#">
+            <img src="assets/trades/masonry.jpg" alt="" width="175" height="80" />
+            <h3>Masonry</h3>
+          </a>
+          <a class="trade-card" href="#">
+            <img src="assets/trades/structural-steel.jpg" alt="" width="175" height="80" />
+            <h3>Structural Steel</h3>
+          </a>
+          <a class="trade-card" href="#">
+            <img src="assets/trades/electrical.jpg" alt="" width="175" height="80" />
+            <h3>Electrical</h3>
+          </a>
+          <a class="trade-card" href="#">
+            <img src="assets/trades/flooring.jpg" alt="" width="175" height="80" />
+            <h3>Flooring</h3>
+          </a>
+          <div class="view-more-wrap">
+            <a href="#">View More Trades</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="discover">
+        <h2>Discover Construction Professionals</h2>
+        <div class="tabs-wrap">
+          <div class="tabs" role="tablist" aria-label="tabs">
+            <button class="tab active" type="button" role="tab" aria-selected="true" data-tab="company-types">Company Types</button>
+            <button class="tab" type="button" role="tab" aria-selected="false" data-tab="market-sectors">Market Sectors</button>
+            <button class="tab" type="button" role="tab" aria-selected="false" data-tab="trades">Trades and Services</button>
+            <button class="tab" type="button" role="tab" aria-selected="false" data-tab="service-areas">Service Areas</button>
+          </div>
+        </div>
+        <div class="tab-panels">
+          <div class="tab-panel active" id="panel-company-types" role="tabpanel">
+            <div class="type-list">
+              <a href="#">Architects</a>
+              <a href="#">Engineers</a>
+              <a href="#">General Contractors</a>
+              <a href="#">Owner / Real Estate Developers</a>
+              <a href="#">Specialty Contractors</a>
+              <a href="#">Suppliers and Vendors</a>
+              <a href="#">Consultants</a>
+            </div>
+          </div>
+          <div class="tab-panel" id="panel-market-sectors" role="tabpanel" hidden>
+            <div class="type-list">
+              <a href="#">Commercial</a>
+              <a href="#">Healthcare</a>
+              <a href="#">Industrial and Energy</a>
+              <a href="#">Infrastructure</a>
+              <a href="#">Institutional</a>
+              <a href="#">Residential</a>
+            </div>
+          </div>
+          <div class="tab-panel" id="panel-trades" role="tabpanel" hidden>
+            <div class="type-list">
+              <a href="#">Design and Engineering</a>
+              <a href="#">Project Management</a>
+              <a href="#">Demolition</a>
+              <a href="#">Earthwork</a>
+              <a href="#">Landscaping</a>
+              <a href="#">Concrete</a>
+              <a href="#">Masonry</a>
+              <a href="#">Structural Steel</a>
+              <a href="#">Electrical</a>
+              <a href="#">Flooring</a>
+            </div>
+          </div>
+          <div class="tab-panel" id="panel-service-areas" role="tabpanel" hidden>
+            <div class="type-list">
+              <a href="#">United States</a>
+              <a href="#">Florida</a>
+              <a href="#">Miami</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="site-footer">
+      <div class="footer-links">
+        <div class="footer-copy">© 2026 Procore Technologies, Inc.</div>
+        <a href="index.html">Network</a>
+        <a href="privacy.html">Privacy Notice</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="#">Do Not Sell Personal Information</a>
+        <a href="#">Sitemap</a>
+      </div>
+      <div class="socials">
+        <a href="#" aria-label="Linked In">
+          <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3.51562 16V5.48828H0.246094V16H3.51562ZM1.86328 4.08203C2.91797 4.08203 3.76172 3.20312 3.76172 2.14844C3.76172 1.12891 2.91797 0.285156 1.86328 0.285156C0.84375 0.285156 0 1.12891 0 2.14844C0 3.20312 0.84375 4.08203 1.86328 4.08203ZM15.7148 16H15.75V10.2344C15.75 7.42188 15.1172 5.24219 11.8125 5.24219C10.2305 5.24219 9.17578 6.12109 8.71875 6.92969H8.68359V5.48828H5.55469V16H8.82422V10.7969C8.82422 9.42578 9.07031 8.125 10.7578 8.125C12.4453 8.125 12.4805 9.67188 12.4805 10.9023V16H15.7148Z"></path></svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg width="11" height="19" viewBox="0 0 11 19"><path d="M9.80859 10.375L10.3008 7.14062H7.17188V5.03125C7.17188 4.11719 7.59375 3.27344 9 3.27344H10.4414V0.496094C10.4414 0.496094 9.14062 0.25 7.91016 0.25C5.34375 0.25 3.65625 1.83203 3.65625 4.64453V7.14062H0.773438V10.375H3.65625V18.25H7.17188V10.375H9.80859Z"></path></svg>
+        </a>
+        <a href="#" aria-label="Twitter">
+          <svg width="18" height="16" viewBox="0 0 18 16"><path d="M16.1367 4.59375C16.8398 4.06641 17.4727 3.43359 17.9648 2.69531C17.332 2.97656 16.5938 3.1875 15.8555 3.25781C16.6289 2.80078 17.1914 2.09766 17.4727 1.21875C16.7695 1.64062 15.9609 1.95703 15.1523 2.13281C14.4492 1.39453 13.5 0.972656 12.4453 0.972656C10.4062 0.972656 8.75391 2.625 8.75391 4.66406C8.75391 4.94531 8.78906 5.22656 8.85938 5.50781C5.80078 5.33203 3.05859 3.85547 1.23047 1.64062C0.914062 2.16797 0.738281 2.80078 0.738281 3.50391C0.738281 4.76953 1.37109 5.89453 2.39062 6.5625C1.79297 6.52734 1.19531 6.38672 0.703125 6.10547V6.14062C0.703125 7.93359 1.96875 9.41016 3.65625 9.76172C3.375 9.83203 3.02344 9.90234 2.70703 9.90234C2.46094 9.90234 2.25 9.86719 2.00391 9.83203C2.46094 11.3086 3.83203 12.3633 5.44922 12.3984C4.18359 13.3828 2.60156 13.9805 0.878906 13.9805C0.5625 13.9805 0.28125 13.9453 0 13.9102C1.61719 14.9648 3.55078 15.5625 5.66016 15.5625C12.4453 15.5625 16.1367 9.97266 16.1367 5.08594C16.1367 4.91016 16.1367 4.76953 16.1367 4.59375Z"></path></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg width="17" height="17" viewBox="0 0 17 17"><path d="M8.875 4.20703C6.625 4.20703 4.83203 6.03516 4.83203 8.25C4.83203 10.5 6.625 12.293 8.875 12.293C11.0898 12.293 12.918 10.5 12.918 8.25C12.918 6.03516 11.0898 4.20703 8.875 4.20703ZM8.875 10.8867C7.43359 10.8867 6.23828 9.72656 6.23828 8.25C6.23828 6.80859 7.39844 5.64844 8.875 5.64844C10.3164 5.64844 11.4766 6.80859 11.4766 8.25C11.4766 9.72656 10.3164 10.8867 8.875 10.8867ZM14.0078 4.06641C14.0078 3.53906 13.5859 3.11719 13.0586 3.11719C12.5312 3.11719 12.1094 3.53906 12.1094 4.06641C12.1094 4.59375 12.5312 5.01562 13.0586 5.01562C13.5859 5.01562 14.0078 4.59375 14.0078 4.06641ZM16.6797 5.01562C16.6094 3.75 16.3281 2.625 15.4141 1.71094C14.5 0.796875 13.375 0.515625 12.1094 0.445312C10.8086 0.375 6.90625 0.375 5.60547 0.445312C4.33984 0.515625 3.25 0.796875 2.30078 1.71094C1.38672 2.625 1.10547 3.75 1.03516 5.01562C0.964844 6.31641 0.964844 10.2188 1.03516 11.5195C1.10547 12.7852 1.38672 13.875 2.30078 14.8242C3.25 15.7383 4.33984 16.0195 5.60547 16.0898C6.90625 16.1602 10.8086 16.1602 12.1094 16.0898C13.375 16.0195 14.5 15.7383 15.4141 14.8242C16.3281 13.875 16.6094 12.7852 16.6797 11.5195C16.75 10.2188 16.75 6.31641 16.6797 5.01562ZM14.9922 12.8906C14.7461 13.5938 14.1836 14.1211 13.5156 14.4023C12.4609 14.8242 10 14.7188 8.875 14.7188C7.71484 14.7188 5.25391 14.8242 4.23438 14.4023C3.53125 14.1211 3.00391 13.5938 2.72266 12.8906C2.30078 11.8711 2.40625 9.41016 2.40625 8.25C2.40625 7.125 2.30078 4.66406 2.72266 3.60938C3.00391 2.94141 3.53125 2.41406 4.23438 2.13281C5.25391 1.71094 7.71484 1.81641 8.875 1.81641C10 1.81641 12.4609 1.71094 13.5156 2.13281C14.1836 2.37891 14.7109 2.94141 14.9922 3.60938C15.4141 4.66406 15.3086 7.125 15.3086 8.25C15.3086 9.41016 15.4141 11.8711 14.9922 12.8906Z"></path></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg width="20" height="14" viewBox="0 0 20 14"><path d="M19.3008 2.64453C19.0898 1.80078 18.4219 1.13281 17.6133 0.921875C16.1016 0.5 10.125 0.5 10.125 0.5C10.125 0.5 4.11328 0.5 2.60156 0.921875C1.79297 1.13281 1.125 1.80078 0.914062 2.64453C0.492188 4.12109 0.492188 7.28516 0.492188 7.28516C0.492188 7.28516 0.492188 10.4141 0.914062 11.9258C1.125 12.7695 1.79297 13.4023 2.60156 13.6133C4.11328 14 10.125 14 10.125 14C10.125 14 16.1016 14 17.6133 13.6133C18.4219 13.4023 19.0898 12.7695 19.3008 11.9258C19.7227 10.4141 19.7227 7.28516 19.7227 7.28516C19.7227 7.28516 19.7227 4.12109 19.3008 2.64453ZM8.15625 10.1328V4.4375L13.1484 7.28516L8.15625 10.1328Z"></path></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll(".tab").forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        var id = tab.getAttribute("data-tab");
+        document.querySelectorAll(".tab").forEach(function (t) {
+          t.classList.toggle("active", t === tab);
+          t.setAttribute("aria-selected", t === tab ? "true" : "false");
+        });
+        document.querySelectorAll(".tab-panel").forEach(function (panel) {
+          var match = panel.id === "panel-" + id;
+          panel.classList.toggle("active", match);
+          panel.hidden = !match;
+        });
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest("a");
+      if (!a) return;
+      var href = a.getAttribute("href");
+      if (!href || href === "#") {
+        e.preventDefault();
+        return;
+      }
+      // Allow in-page anchors and local pages only
+      if (href.startsWith("#") || href.endsWith(".html") || !/^(https?:|\/\/|mailto:|tel:)/i.test(href)) {
+        return;
+      }
+      e.preventDefault();
+    }, true);
+  </script>
+</body>
+</html>
