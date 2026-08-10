@@ -200,10 +200,39 @@
         flex: 1 1 auto;
         max-height: none !important;
       }
-      .legal-wrap { width: calc(100% - 28px); padding-top: 28px; }
-      .header-inner, .footer-inner { width: calc(100% - 28px); }
+      .legal-wrap {
+        width: calc(100% - 28px);
+        width: min(920px, calc(100% - 28px));
+        padding-top: 28px;
+        padding-left: max(0px, env(safe-area-inset-left));
+        padding-right: max(0px, env(safe-area-inset-right));
+        padding-bottom: max(48px, env(safe-area-inset-bottom));
+      }
+      .header-inner, .footer-inner {
+        width: calc(100% - 28px);
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+      }
+      .otnotice-sections { padding: 20px 16px 32px; }
+      .legal-main-title { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+      .header-actions .btn { min-height: 40px; }
     }
 
+    @media (max-width: 600px) {
+      .otnotice-section-content table,
+      .otnotice-section-content [align="center"],
+      .otnotice-section-content [align="left"] {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .otnotice-section-content table {
+        min-width: 520px;
+      }
+      .header-actions .btn-ghost { display: none; }
+    }
   </style>
 </head>
 <body>
