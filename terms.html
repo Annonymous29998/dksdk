@@ -1,72 +1,281 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Terms of Service | Procore Network</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>User Terms of Service | Procore</title>
+  <meta name="description" content="Terms of service that apply to all Procore users and our privacy notice on the information we collect and how it's used." />
   <link rel="icon" href="assets/favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/legal/otnotice-core.css" />
+  <link rel="stylesheet" href="assets/legal/otnotice-layout-left-aligned-menu.css" />
   <style>
+    :root {
+      --text: #232729;
+      --muted: #696969;
+      --bg: #ffffff;
+      --panel: #f8f8f8;
+      --orange: #ff5100;
+      --border: #eeeeee;
+      --link: #1d5cc9;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: "Inter Tight", sans-serif;
-      color: #232729;
-      background: #f4f5f6;
+      width: 100%;
+      overflow-x: hidden;
+      font-family: "Inter Tight", Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
       font-size: 14px;
       line-height: 1.6;
     }
-    header {
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+
+    /* Procore legal chrome */
+    .site-header {
+      position: sticky; top: 0; z-index: 200;
       background: #fff;
       border-bottom: 1px solid #eef0f1;
-      padding: 16px 48px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      padding: 14px 24px;
     }
-    header img { height: 20px; }
-    header a { color: #232729; text-decoration: none; font-weight: 500; font-size: 24px; border-left: 1px solid #000; padding-left: 12px; }
-    .wrap {
-      max-width: 860px;
-      margin: 40px auto;
-      padding: 40px;
-      background: #fff;
+    .site-header-inner {
+      max-width: 1440px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand img { height: 20px; width: auto; }
+    .brand-sep { width: 1px; height: 18px; background: #000; }
+    .brand span { font-size: 18px; font-weight: 500; }
+    .header-actions { display: flex; gap: 8px; align-items: center; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      height: 36px; padding: 0 14px; border-radius: 4px; font-weight: 700; font-size: 13px;
+    }
+    .btn-orange { background: var(--orange); color: #fff; }
+    .btn-gray { background: #f4f5f6; color: var(--text); }
+
+    .legal-shell {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      max-width: 1440px;
+      margin: 0 auto;
+      min-height: calc(100vh - 70px);
+    }
+    .legal-sidebar {
+      border-right: 1px solid var(--border);
+      background: #fafafa;
+      padding: 28px 20px 40px;
+      position: sticky;
+      top: 69px;
+      align-self: start;
+      height: calc(100vh - 69px);
+      overflow: auto;
+    }
+    .legal-sidebar h2 {
+      margin: 0 0 8px;
+      font-size: 12px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: #8a8a8a;
+      font-weight: 700;
+    }
+    .legal-sidebar .group { margin-bottom: 24px; }
+    .legal-sidebar a {
+      display: block;
+      padding: 8px 10px;
       border-radius: 4px;
+      color: #464f53;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 2px;
     }
-    h1 { margin: 0 0 8px; font-size: 36px; line-height: 1.2; }
-    .meta { color: #6a767c; margin-bottom: 32px; font-weight: 500; }
-    h2 { font-size: 20px; margin: 28px 0 12px; }
-    p { margin: 0 0 14px; font-weight: 400; }
-    ul { margin: 0 0 14px; padding-left: 20px; font-weight: 400; }
-    li { margin-bottom: 8px; }
-    .back {
+    .legal-sidebar a:hover { background: #eee; }
+    .legal-sidebar a.active {
+      background: #fff;
+      color: #000;
+      font-weight: 700;
+      box-shadow: inset 3px 0 0 var(--orange);
+    }
+    .back-home {
       display: inline-block;
-      margin-top: 24px;
-      color: #1d5cc9;
+      margin: 0 0 18px;
+      color: var(--link);
       font-weight: 600;
       text-decoration: underline;
+      font-size: 14px;
+    }
+
+    .legal-main {
+      min-width: 0;
+      padding: 24px 0 80px;
+      background: #fff;
+    }
+    .legal-main-title {
+      margin: 0 24px 8px;
+      font-size: 40px;
+      line-height: 1.15;
+      font-weight: 700;
+    }
+    .legal-phone {
+      margin: 0 24px 20px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .legal-phone strong { color: var(--text); }
+
+    /* OneTrust notice host — replace fixed 400px margin layout */
+    #otnotice-host {
+      position: relative;
+      width: 100%;
+      min-height: 400px;
+      padding: 0 24px;
+    }
+    .otnotice-content {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-align-items: flex-start;
+      align-items: flex-start;
+      gap: 28px;
+      width: 100%;
+    }
+    .otnotice-menu {
+      position: -webkit-sticky !important;
+      position: sticky !important;
+      top: 90px !important;
+      left: auto !important;
+      width: 240px !important;
+      max-width: 240px !important;
+      -webkit-flex: 0 0 240px;
+      flex: 0 0 240px;
+      margin: 0 !important;
+      max-height: calc(100vh - 120px) !important;
+      z-index: 5;
+      -webkit-overflow-scrolling: touch;
+    }
+    .otnotice-menu > .otnotice-menu-section {
+      width: auto !important;
+      margin-bottom: 16px !important;
+    }
+    .otnotice-sections {
+      -webkit-flex: 1 1 auto;
+      flex: 1 1 auto;
+      min-width: 0;
+      margin: 0 !important;
+    }
+    .otnotice-sections > .otnotice-section > h2.otnotice-section-header,
+    .otnotice-sections > .otnotice-section > .otnotice-section-content {
+      margin-left: 0 !important;
+    }
+    .otnotice-section-content p,
+    .otnotice-section-content li {
+      font-weight: 400;
+      color: #232729;
+    }
+    .otnotice-section-content a { color: var(--link); text-decoration: underline; }
+    .otnotice-version {
+      float: none !important;
+      margin: 0 0 24px auto !important;
+      text-align: right;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 1100px) {
+      .legal-shell { grid-template-columns: 1fr; }
+      .legal-sidebar {
+        position: relative;
+        top: 0;
+        height: auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+      #otnotice-host { padding: 0 16px; }
+      .otnotice-content {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .otnotice-menu {
+        position: relative !important;
+        top: 0 !important;
+        width: 100% !important;
+        max-width: none !important;
+        -webkit-flex: 1 1 auto;
+        flex: 1 1 auto;
+        margin: 0 !important;
+        max-height: none !important;
+      }
+      .otnotice-menu > .otnotice-menu-section { width: auto !important; }
+      .otnotice-sections { margin: 0 !important; width: 100%; }
+      .legal-main-title { font-size: 28px; margin-left: 16px; margin-right: 16px; }
+      .legal-phone { margin-left: 16px; margin-right: 16px; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="assets/procore_logo.svg" alt="Procore" width="150" height="20" />
-    <a href="index.html">Network</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/procore_logo.svg" alt="Procore" width="150" height="20" />
+        <span class="brand-sep" aria-hidden="true"></span>
+        <span>Legal</span>
+      </a>
+      <div class="header-actions">
+        <a class="btn btn-orange" href="#">Request a demo</a>
+        <a class="btn btn-gray" href="#">Log in</a>
+      </div>
+    </div>
   </header>
-  <main class="wrap">
-    <h1>Terms of Service</h1>
-    <p class="meta">Last updated: August 8, 2026</p>
-    <p>These Terms of Service apply to this local Procore Network demo. The site is a static HTML clone for demonstration and does not provide live Procore products or account access.</p>
-    <h2>Use of this demo</h2>
-    <ul>
-      <li>You may view and interact with the local pages for preview purposes.</li>
-      <li>Links that would normally open Procore’s live website stay on this local site instead.</li>
-      <li>Content shown here is for layout/demo use and may not reflect current Procore policies.</li>
-    </ul>
-    <h2>No warranty</h2>
-    <p>This demo is provided as-is. It is not an official Procore service and should not be used for bidding, contracting, or legal reliance.</p>
-    <h2>Ownership</h2>
-    <p>Procore names, logos, and related marks belong to their respective owners. This clone is for local demonstration only.</p>
-    <a class="back" href="index.html">← Back to Pabon Engineering, Inc.</a>
-  </main>
+
+  <div class="legal-shell">
+    <aside class="legal-sidebar" aria-label="Legal navigation">
+      <a class="back-home" href="index.html">← Back to Network</a>
+      <div class="group">
+        <h2>Overview</h2>
+        <a href="#">Legal</a>
+      </div>
+      <div class="group">
+        <h2>Terms</h2>
+        <a href="terms.html" class="active">User Terms of Service</a>
+        <a href="#">API Terms and Conditions</a>
+        <a href="#">Online Subscription Terms</a>
+        <a href="#">Supplemental Terms</a>
+      </div>
+      <div class="group">
+        <h2>Privacy</h2>
+        <a href="privacy.html" class="">Privacy Notice</a>
+        <a href="#">Data Processing Addendum</a>
+      </div>
+      <div class="group">
+        <h2>Security</h2>
+        <a href="#">Report a Security Vulnerability</a>
+        <a href="#">Trust &amp; Security</a>
+      </div>
+    </aside>
+
+    <main class="legal-main">
+      <h1 class="legal-main-title">User Terms of Service</h1>
+      <p class="legal-phone">Contact phone: <strong>+1 (201) 908-0512</strong></p>
+      <div id="otnotice-host" class="otnotice">
+        <div class="otnotice-content"><ul class="otnotice-menu"><li class="otnotice-menu-section"><a href="#otnotice-section-5bd8fd6b-4017-47b4-b325-2a5abdffbf46">Introduction</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-2bf2963f-d199-4683-ad2a-12db075d332a">Using the Offerings</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-33ad6015-1efc-4b17-a172-8eacdaa4ba51">Licenses and Restrictions</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-9c498815-02b3-46f3-97f1-735912132e5c">License of Your Content to Procore</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-90927be5-ff78-4598-b17f-066588fd0d7b">Relationship of Procore and You</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-b787d3f5-760b-4c5f-9487-caa83f299c15">Errors and Corrections</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-7e810d16-4940-459e-a580-1ef500e4e7f1">Third-Party Content and Links</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-48c8e11a-7779-44c4-ae53-63a5939c7bed">Disclaimer</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-bd6a2080-3d5a-4dd0-b722-bf9a9d2dec77">Limitation of Liability</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-a67a7e9f-8438-4af4-aadd-52b649dc6885">Indemnification</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-ca8450b1-4325-4552-bd47-4f324b819bcb">Governing Law</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-7d8c0122-0fbc-4415-ae8c-62a019c5a047">Dispute Resolution</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-e36a266f-218c-424b-ac0f-cda897cb50dd">Termination</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-06ebe3ea-8b1d-479c-ad41-c521ad65a3f3">General</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-977edf55-af4b-4f3f-99b7-2a635bf047fc">Privacy</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-7844762d-8fc2-41e8-b4d2-d50ffbd7477d">Translations</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-feb17073-ca39-4cb8-96bc-7d14ec8607d2">Modifications to Terms</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-2a1362f0-a330-44a3-879d-41bc55697cfa">Copyright Notice</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-d8177093-04f2-449e-8df4-9f7376aa4f26">Insurance Special Terms</a></li></ul><div class="otnotice-sections"><section class="otnotice-section" id="otnotice-section-5bd8fd6b-4017-47b4-b325-2a5abdffbf46"><div class="otnotice-section-content"><h1>User Terms of Service</h1><p>Updated as of: January 30, 2023</p><p>The <a href="#">https://app.procore.com</a>, <a href="#">https://www.procore.com</a>, and <a href="#">https://www.procore.com/network</a> websites, and any other website on which these User Terms of Service appear, and any software, mobile applications, products, devices, or other services offered by Procore and other services offered through third parties integrating Procore functionality (collectively, “Offerings”), are made available by Procore Technologies, Inc., its subsidiaries, and/or affiliates (Procore, its subsidiaries, and affiliates are collectively, “we”, “us”, “our”, or “Procore“). You may access and use the Offerings only under the following User Terms of Service, including any product-specific, supplemental or other terms referencing or linked to these User Terms of Service (“Special Terms”). These User Terms of Service and any applicable Special Terms are collectively the “Terms”. If there is any conflict between these User Terms of Service and the Special Terms, the Special Terms will control in relation to their subject matter.</p><p>These Terms apply to you and your use of the Offerings. By registering, accessing, or using the Offerings you agree to these Terms, <a href="#">Procore's Privacy Notice</a>, Procore's Copyright Notice (posted below), and any other policies identified herein, which are incorporated by reference into these Terms. If you are using the Offerings on behalf of your employer or a legal entity, you represent and warrant that you are authorized to bind your employer or that entity to these Terms. In addition, these Terms apply to and are binding on anyone who is authorized by the employer or legal entity to access or use the Offerings. Except for Paid Offerings, if you wish to terminate these Terms at any time you can do so by closing your account and no longer accessing or using the Offerings.</p><p>If your use of a given Paid Offering (as defined below) is governed by a separate Subscription and Services Agreement, Master Services Agreement, or similar agreement entered into with Procore, that agreement will control to the extent that there is any conflict with these Terms with respect to that given Paid Offering.</p></div></section><section class="otnotice-section" id="otnotice-section-2bf2963f-d199-4683-ad2a-12db075d332a"><div class="otnotice-section-content"><h2>Using the Offerings</h2><h4>Eligibility</h4><p>To use the Offerings, you agree that you: (1) must be at least 16 years old, or older if required by applicable law for Procore to lawfully provide the Offerings to you without parental consent (including use of your Personal Data as defined in Procore’s<a href="#">&nbsp;Data Processing Addendum</a>); (2) will only have one registered account; (3) are not already restricted by Procore from using the Offerings. Creating an account with false information is a violation of these Terms, including registering accounts on behalf of others.</p><h4>Registration and Your Account</h4><p>Certain Offerings require registration. For those Offerings, you must provide complete, accurate, and truthful information and update the registration information promptly if there are any changes. Registered users are responsible for: (1) maintaining the confidentiality of their login credentials, and (2) for all activitiesusage and activity that occur under their account including use or activity by any third party they authorize or invite to access, use or connect to their account; and (3) all statements made or materials posted under their account, including liability for harm caused by such statements or materials. You may not assign or transfer your account to any other person or entity without Procore’s prior written permission. You agree that Procore is not responsible for third-party access to your account that results from the theft or misappropriation of your login credentials.</p><h4>Paid Offerings</h4><p>If there is a fee to use an Offering (a “Paid Offering”), the fee will be disclosed prior to registration and charged as outlined in an applicable order form. Paid Offerings are subject to a separate agreement with Procore.</p><h4>Notices and Messaging</h4><p>You understand that by registering with the Offerings, you may receive regular updates, marketing, and other communications regarding new or existing Procore products and services. You agree that Procore will provide notices and messages to you in the following ways: (1) within the Offerings, or (2) sent to the contact information you provide us (e.g., email, mobile number, physical address). You may opt out of receiving promotional or marketing communications from us at any time by using the unsubscribe link in the email communications we send or by filling out this <a href="#">Marketing Opt-Out Form</a>.</p><h4>Linking to the Offerings</h4><p>You may provide links to the Offerings, provided: (1) you do not remove or obscure, by framing or otherwise, any portion of the web pages, the Terms, or any notices on the Offerings, and (2) you discontinue providing links to the Offerings if requested by Procore.</p></div></section><section class="otnotice-section" id="otnotice-section-33ad6015-1efc-4b17-a172-8eacdaa4ba51"><div class="otnotice-section-content"><h2>Licenses and Restrictions</h2><h4>Limited License</h4><p>As an Offering user, you are granted a non-exclusive, non-transferable, non-sublicensable, revocable, limited license to access and use the Offerings per these Terms. Procore may terminate this license at any time for any reason. Certain Offerings require login information as described below. Notwithstanding the license in this section, certain Offerings require you to register to access and use certain of the Offerings’ features.</p><h4>Limitations</h4><p>Any unauthorized use of the Offerings is prohibited. You may not use the Offerings to:</p><ol class="ol-default"><li>Copy, modify, reproduce, republish, distribute, display, or transmit for commercial, non-profit, or public purposes all or any portion of the Offerings or any information obtained from the Offerings, either directly or through a third party.</li><li>Extract, decompile, reverse engineer, disassemble, or create derivative works from or competitive products of the Offerings.</li><li>Create a false identity, misrepresent your identity, create a profile for anyone other than yourself, or use or attempt to use another’s account;</li><li>Disclose information that you do not have the consent to disclose (such as confidential information of others, including your employer);</li><li>Determine the Offerings’ architecture or extract data or information about usage, or individual identities of other users of the Offerings via use of any network monitoring or discovery software or otherwise.</li><li>Override any security feature or bypass or circumvent any access controls or use limits of the Offerings;</li><li>Rent, lease, loan, trade, sell/resell, or otherwise monetize the Offerings or related data or access to the same, without Procore’s consent;</li><li>Monitor, copy, scan, review, index, mirror, ping, or validate the Offerings via robot, spider, other automatic software or device, process, approach, or methodology, manual or otherwise (methods such as web scraping, harvesting, data extraction, data validation, or verification are prohibited).</li><li>Transmit any computer virus, worm, defect, trojan horse, or any other item of a destructive nature, or to upload any virus or malicious code.</li><li>Transmit any false, misleading, fraudulent, or illegal communications, information, or data.</li><li>Phish, spoof, commit illegal or fraudulent activity, or violate applicable laws or regulations.</li><li>Deep-link to our Offerings for any purpose other than to promote your profile on the Offerings, without Procore’s consent;</li><li>Use bots or other automated methods to access the Offerings, add or download contacts, or send or redirect messages;</li><li>Monitor the Offerings’ availability, performance, or functionality for any competitive purpose;</li><li>Damage, interfere, disable, or impair the operation of, or place an unreasonable load on, the Offerings (e.g., spam, denial of service attack, viruses, gaming algorithms);</li><li>Violate the intellectual property rights of others, including copyrights, patents, trademarks, trade secrets, or other proprietary rights;</li><li>Violate Procore’s intellectual property or other rights, including using the word “Procore” or its logos in any business name, email, or URL except as provided in the <a href="#">Trademark Use Guidelines</a>;</li><li>Imply or state that you are affiliated with or endorsed by Procore without Procore’s express consent;</li><li>Access unauthorized information;</li><li>Solicit information from minors or harm or threaten to harm minors;</li><li>Attack, threaten violence, stalk, harass, incite, harm, or intimidate any other user, person, or organization, or engage in any other threatening behavior;</li><li>Transmit, store, or post any material that is abusive, harassing, tortious, defamatory, derogatory, vulgar, pornographic, obscene, libelous, fraudulent, invasive of another's privacy, hateful, or racially, ethnically, or otherwise objectionable;</li><li>Transmit any unsolicited or unauthorized advertising, promotional materials, junk mail, spam, chain letters, contests, pyramid schemes, surveys, or any other form of solicitation or mass messaging, whether commercial in nature or not; or</li><li>Export or re-export the Offerings or any portion thereof in violation of any applicable export control laws and regulations.</li></ol><p>You acknowledge that we have the right to monitor your access or use of the Offerings for the purpose of operating and improving the Offerings (including without limitation for security analysis, fraud prevention, risk assessment, troubleshooting and customer support purposes), to ensure your compliance with these Terms and to comply with applicable law or the order or requirement of a court, consent decree, administrative agency, or other governmental body.</p><p>If Procore believes, in its sole discretion, that you may violate, have violated or attempted to violate any of these Terms or any policies referenced herein, your use and access to the Offerings may be limited, temporarily revoked, or permanently revoked and your Content may be modified or removed from the Offerings in Procore’s sole discretion without notice to you.</p><h4>Procore Intellectual Property Rights</h4><p>Except as expressly provided in these Terms, nothing contained herein will be construed as conferring any license or right, by implication, estoppel, or otherwise, under copyright or other intellectual property rights. You agree that the Offerings are protected by copyrights, trademarks, service marks, patents, or other proprietary rights and laws. Procore, the Procore logo, and all other Procore trademarks, service marks, product names, and trade names of Procore appearing on or in conjunction with the Offerings are owned by Procore. Procore does not grant you the right to use or display any trademark, service mark, product name, trade name, or logo appearing on the Offerings without Procore's prior written consent.</p></div></section><section class="otnotice-section" id="otnotice-section-9c498815-02b3-46f3-97f1-735912132e5c"><div class="otnotice-section-content"><h2>License of Your Content to Procore</h2><p>Certain portions of the Offerings allow you to publish (e.g., post, upload, or otherwise provide) publicly accessible content (“Public Content”). Other portions of the Offerings allow you to publish content that is only viewable by you or by your users with appropriate access permissions (“Non-Public Content”). Public Content and Non-Public Content are collectively your “Content” that you own or have the right to provide (and share) and you grant Procore the licenses set forth below.</p><h4>Non-Public Content</h4><p>With respect to Non-Public Content, you hereby grant (or warrant that the owner of such rights has expressly granted) Procore and its subprocessors a worldwide right and license to access, host, display, process, analyze, transmit, reproduce, and otherwise utilize Non-Public Content for the purposes of providing and improving the Offerings.</p><h4>Public Content</h4><p>With respect to Public Content, you hereby irrevocably grant (or warrant that the owner of such rights has expressly granted) Procore a worldwide, perpetual, non-exclusive, royalty-free, assignable, sub-licensable, transferable rights to use the Public Content for any lawful purpose without any further consent, notice, or compensation to you or others. Procore will own any derivative works it makes of Public Content.</p><p>PROCORE MAKES NO GUARANTEE OF CONFIDENTIALITY OR PRIVACY OF ANY PUBLIC CONTENT TRANSMITTED TO OR FROM THE OFFERINGS. You acknowledge that any Public Content you post via the Offerings is a public and not private communication. Others may read and view your communications without your knowledge. Procore does not endorse any Public Content on the Offerings. Procore will not be liable for the privacy of any of your or any other third-party Public Content on the Offerings and specifically disclaims any liability resulting from such postings and communications, including any objectionable content. Please also see Procore's <a href="#">Privacy Notice</a>. You agree that we may access, store, process, share, and use any information and Personal Data you provide in accordance with the Privacy Notice.</p><h4>Usage Data</h4><p>Procore may collect, use, share, and otherwise process usage information or data related to or derived from the access or use of the Offerings including Non-Public Content and Public Content(“Usage Data”). Examples of Usage Data include information or data on user visits, user activity, and numbers and types of clicks or impressions, as well as statistical, functional, behavioral, or other information or data based on or derived from such access or use. Except where you have expressly provided your written consent, Procore will only disclose Usage Data if such data does not contain Personal Data or any Non-Public Content.</p><h4>Feedback and Suggestions</h4><p>By submitting suggestions or other feedback regarding the Offerings to Procore, you agree that Procore can use and publicly share such feedback (although it does not have to) for any purpose without compensation or attribution to you. You agree that you will have no recourse against Procore for any alleged or actual infringement or misappropriation of any proprietary right in any feedback or suggestion you provide to Procore.</p><h4>Advertising</h4><p>Procore has the right, without payment to you or others, to serve ads, paid content, and other information near or in association with your Content and information, and we enable search engines to make Public Content findable through their services.</p></div></section><section class="otnotice-section" id="otnotice-section-90927be5-ff78-4598-b17f-066588fd0d7b"><div class="otnotice-section-content"><h2>Relationship of Procore and You</h2><p>You are an independent third party to Procore and nothing in these Terms will create or represent that there is any partnership, joint venture, agency, franchise, sales relationship, or employment relationship between you and Procore.</p></div></section><section class="otnotice-section" id="otnotice-section-b787d3f5-760b-4c5f-9487-caa83f299c15"><div class="otnotice-section-content"><h2>Errors and Corrections</h2><p>Procore does not represent or warrant that the Offerings will be error-free, free of viruses or other harmful components, that defects will be corrected, or that they will always be accessible. Procore does not warrant or represent that content or information available on or through the Offerings will be correct, accurate, timely, or otherwise reliable.</p><p>Except as separately agreed with you in writing, Procore may: (1) change, suspend or discontinue any of our Offerings; and/or (2) modify the prices of Paid Offerings effective prospectively upon reasonable notice to the extent allowed under the law. Except as required by law, Procore has no obligation to retain or provide you with copies of your Content.</p></div></section><section class="otnotice-section" id="otnotice-section-7e810d16-4940-459e-a580-1ef500e4e7f1"><div class="otnotice-section-content"><h2>Third-Party Content and Links</h2><p>The Offerings may host third-party content or information (“Third-Party Content”) or may include links to other websites or applications (“Third-Party Services”). Procore does not control or endorse any Third-Party Content or Third-Party Service. Further, information and opinions provided by Procore employees and agents of Procore in interactive areas of the Offerings are not necessarily endorsed by Procore and do not necessarily represent the beliefs and opinions of Procore. You agree that Procore is not responsible for the availability, accuracy, or content of any Third-Party Content or Third-Party Service. Your use of and reliance on any Third-Party Content or Third-Party Service is at your own risk. Some of the services made available through the Offerings and Third-Party Services may be subject to additional third-party terms of service, privacy policies, licensing terms and disclosures, and other terms, conditions, and policies. It is your responsibility to familiarize yourself with any such applicable third-party terms. Procore is not responsible for, and makes no representations or warranties about (a) any Third-Party Content or Third-Party Services or your use thereof, or (b) any third-party terms or your compliance with them. Procore reserves the right to disable any link or remove any Third-Party Content and/or Third-Party Service at any time in its sole discretion.</p><p>Third-Party Content includes Google Maps, which is made available through some of the Offerings and is subject to the <a href="#">Google Maps/Google Earth Additional Terms of Service</a> and the <a href="#">Google Privacy Policy</a>.</p><p>Procore may help connect registered users offering their services with users seeking services. Procore does not perform or employ individuals to perform these services. You must be at least 18 years of age to offer, perform, or procure these services. You acknowledge that Procore does not supervise, direct, control, or monitor users in the performance of these services and agree that: (1) Procore is not responsible for the offering, performance, or procurement of these services, (2) Procore does not endorse any particular user’s offered services, and (3) nothing will create an employment, agency, or joint venture relationship between Procore and any user offering services.</p></div></section><section class="otnotice-section" id="otnotice-section-48c8e11a-7779-44c4-ae53-63a5939c7bed"><div class="otnotice-section-content"><h2>Disclaimer</h2><p>THE OFFERINGS ARE PROVIDED ON AN “AS IS, AS AVAILABLE” BASIS. PROCORE EXPRESSLY DISCLAIMS ALL WARRANTIES, INCLUDING THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. PROCORE DISCLAIMS ALL RESPONSIBILITY FOR ANY LOSS, INJURY, CLAIM, LIABILITY, OR DAMAGE OF ANY KIND RESULTING FROM, ARISING OUT OF, OR IN ANY WAY RELATED TO: (1) ANY ERRORS IN OR OMISSIONS FROM THE OFFERINGS INCLUDING, BUT NOT LIMITED TO, TECHNICAL INACCURACIES AND TYPOGRAPHICAL ERRORS, (2) THIRD-PARTY COMMUNICATIONS, (3) ANY THIRD-PARTY SERVICES, WEBSITES, OR THIRD-PARTY CONTENT THEREIN DIRECTLY OR INDIRECTLY ACCESSED THROUGH LINKS ON THE OFFERINGS, INCLUDING, BUT NOT LIMITED TO, ANY ERRORS IN OR OMISSIONS THEREFROM, (4) THE UNAVAILABILITY OF THE OFFERINGS, (5) YOUR USE OF THE OFFERINGS, OR (6) YOUR USE OF ANY EQUIPMENT OR SOFTWARE IN CONNECTION WITH THE OFFERINGS.</p></div></section><section class="otnotice-section" id="otnotice-section-bd6a2080-3d5a-4dd0-b722-bf9a9d2dec77"><div class="otnotice-section-content"><h2>Limitation of Liability</h2><p>TO THE FULLEST EXTENT OF THE LAW (AND UNLESS PROCORE HAS ENTERED INTO A SEPARATE WRITTEN AGREEMENT THAT OVERRIDES THESE TERMS), PROCORE WILL NOT BE LIABLE FOR ANY LOSS, INJURY, CLAIM, LIABILITY, OR DAMAGE OF ANY KIND RESULTING FROM YOUR USE OF THE OFFERINGS, ANY FACTS, CONTENT, OR OPINIONS APPEARING ON OR THROUGH AN INTERACTIVE AREA, OR ANY THIRD-PARTY CONTENT OR THIRD-PARTY SERVICE. PROCORE WILL NOT BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, INCIDENTAL, PUNITIVE, OR CONSEQUENTIAL DAMAGES, LOST PROFITS, LOST REVENUE, LOST BUSINESS OPPORTUNITIES, LOSS OF DATA, OR REPUTATIONAL DAMAGES (E.G., OFFENSIVE OR DEFAMATORY STATEMENTS) OF ANY KIND WHATSOEVER (INCLUDING, WITHOUT LIMITATION, ATTORNEYS' FEES) IN ANY WAY DUE TO, RESULTING FROM, OR ARISING IN CONNECTION WITH THESE TERMS, THE USE OF OR INABILITY TO USE THE OFFERINGS, THE INTERACTIVE AREAS, OR ANY THIRD-PARTY CONTENT OR THIRD PARTY SERVICES.</p></div></section><section class="otnotice-section" id="otnotice-section-a67a7e9f-8438-4af4-aadd-52b649dc6885"><div class="otnotice-section-content"><h2>Indemnification</h2><p>You agree to indemnify, defend, and hold Procore, and its affiliates, officers, directors, employees, agents, licensors, and suppliers harmless from and against all claims, losses, expenses, damages, and costs, including reasonable attorneys' fees, arising out of or relating to: (1) your access to or use of the Offerings, including your Content, (2) your violation of these Terms, (3) your breach of your representations and warranties provided under these Terms, (4) your products or services, or the marketing or provision thereof to end users, or (5) the infringement by you, or any third party using your account, of any intellectual property or other right of any person or entity. Procore reserves the right, at your expense, to assume the exclusive defense and control of any matter for which you are required to indemnify us and you agree to cooperate with our defense of these claims. You agree not to settle any such matter without the prior written consent of Procore.</p></div></section><section class="otnotice-section" id="otnotice-section-ca8450b1-4325-4552-bd47-4f324b819bcb"><div class="otnotice-section-content"><h2>Governing Law</h2><p>These Terms are to be governed by and construed in accordance with the internal laws of the State of California, without regard for principles of conflicts of laws. Subject to the Dispute Resolution section below, Excluded Disputes and Disputes (defined below) that cannot be arbitrated must be brought exclusively in the state and federal courts sitting in Los Angeles County, California.</p></div></section><section class="otnotice-section" id="otnotice-section-7d8c0122-0fbc-4415-ae8c-62a019c5a047"><div class="otnotice-section-content"><h2>Dispute Resolution</h2><p>PLEASE READ THIS SECTION CAREFULLY. IT AFFECTS YOUR LEGAL RIGHTS, INCLUDING YOUR RIGHT TO FILE A LAWSUIT IN COURT.</p><p>Informal Negotiations. The parties will first attempt in good faith to promptly resolve any disputes arising out of or relating to these Terms (or the breach, termination, enforcement, interpretation, or validity thereof) (each a “Dispute”) by negotiation between representatives of each party with the authority to resolve such Dispute informally for at least thirty (30) days before initiating any arbitration. Informal negotiations begin upon written notice from one party to the other. You will send notice to Procore Technologies, Inc., 6309 Carpinteria Ave., Carpinteria, CA 93013 USA, Attention: Chief Legal Officer. Procore will send notice to you at your address in our records or by email to the email address provided by you in connection with your use of the Offerings.</p><p>Binding Arbitration. If the parties are unsuccessful in resolving the Dispute through informal negotiations, such Dispute will be submitted to final and binding arbitration. Arbitration will be conducted in English and administered as follows: (i) if in the U.S., by the American Arbitration Association (AAA) under its rules or (ii) if outside the U.S., by the International Centre for Dispute Resolution (ICDR) in accordance with the International Arbitration Rules then in effect. For more information, see <a href="#">www.adr.org</a>. Except as required by law, neither party nor its representatives may disclose the existence, content, or results of any arbitration without the other party’s prior written consent.</p><p>The arbitrator is not empowered to award damages in excess of compensatory damages and each party hereby irrevocably waives any right to recover such damages with respect to any Dispute resolved by arbitration. The decision of the arbitrator will be in accordance with these Terms and will be binding upon the parties. Each party hereby waives any right it may otherwise have under the laws of any jurisdiction to any form of appeal. Judgment upon the award rendered may be entered in and enforced by any court of competent jurisdiction having jurisdiction over both parties. The arbitrator rules on his or her own jurisdiction, including the arbitrability of any claim; however, a court has exclusive authority to enforce the prohibition on arbitration on a class-wide basis or in a representative capacity. These Terms govern if there is a conflict with the AAA or the ICDR rules as applicable</p><p>Excluded Disputes. Notwithstanding the foregoing, neither party is required to arbitrate claims: (1) where all named parties seek monetary relief which, in the aggregate, qualifies as a claim that meets the requirements of an applicable small claims court; (2) seeking injunctive relief; or (3) seeking to enforce or protect, or concerning the validity of, any of your or Procore’s intellectual property rights. However, if a small claim is transferred, removed, or appealed to a different court, either party may require that the claim be submitted to final binding arbitration.</p><p>Restrictions/No Class Actions. THE PARTIES AGREE THAT ANY CLAIM BROUGHT IN CONNECTION WITH A DISPUTE, WHETHER RESOLVED THROUGH ARBITRATION OR OTHERWISE, WILL TAKE PLACE ON AN INDIVIDUAL BASIS. THE PARTIES WAIVE THE RIGHT TO PARTICIPATE IN A CLASS, CONSOLIDATED, OR REPRESENTATIVE ACTION OR ARBITRATION, AND THE RIGHT TO A TRIAL BY JURY. UNLESS BOTH YOU AND PROCORE AGREE OTHERWISE, THE ARBITRATOR MAY NOT CONSOLIDATE OR JOIN THE CLAIMS OF OTHER PERSONS OR PARTIES WHO MAY BE SIMILARLY SITUATED, AND MAY NOT OTHERWISE PRESIDE OVER ANY FORM OF A REPRESENTATIVE OR CLASS PROCEEDING.</p><p>Severability. If the Restrictions/No Class Actions section is found to be illegal or unenforceable as to all or some parts of a dispute, then those parts will not be arbitrated but will be resolved in a court of competent jurisdiction, with the balance resolved through arbitration.</p><p>If any provision of this Dispute Resolution section is found to be illegal or unenforceable, then that provision will be severed; however, the remaining provisions will still apply and shall be interpreted to as nearly as possible achieve the original intent, inclusive of the severed provision.</p><p>Survival. This Dispute Resolution section will survive any termination of these Terms or your use of the Offerings.</p></div></section><section class="otnotice-section" id="otnotice-section-e36a266f-218c-424b-ac0f-cda897cb50dd"><div class="otnotice-section-content"><h2>Termination</h2><p>You or Procore may terminate these Terms at any time with notice to the other. On termination, you lose the right to access or use the Offerings. The following will survive termination: Registration and Your Account, License of your Content to Procore, Feedback and Suggestions, Use Limitation, Limitation of Liability, Indemnification, Governing Law, Dispute Resolution, and the General sections of these Terms, and any other terms that would naturally survive by their nature. Any amounts owed by either party prior to termination remain owed after termination. Procore will have no liability or responsibility to any user related to or arising out of any termination of access to the Offerings.</p></div></section><section class="otnotice-section" id="otnotice-section-06ebe3ea-8b1d-479c-ad41-c521ad65a3f3"><div class="otnotice-section-content"><h2>General</h2><p>These Terms incorporate by reference any notices contained on this website, the <a href="#">Privacy Notice</a>, the Copyright Notice, and any other referenced policies, and constitute the entire agreement with respect to access to and use of the Offerings (unless you and Procore have entered a separate agreement that explicitly overrides these Terms). If there is conflict among the terms of the foregoing notice or policies, these Terms prevail. If any provision of these Terms is unlawful, void, or unenforceable, then that provision will be deemed severable from the remaining provisions and will not affect their validity and enforceability. If Procore does not act to enforce a breach of these Terms, that does not mean Procore has waived its right to enforce these Terms. You may not assign or transfer these Terms or any of your rights or obligations (or your membership or use of Offerings) to anyone without Procore’s consent. Procore may assign these Terms to its affiliates or a party that buys Procore without your consent. There are no third-party beneficiaries to these Terms.</p></div></section><section class="otnotice-section" id="otnotice-section-977edf55-af4b-4f3f-99b7-2a635bf047fc"><div class="otnotice-section-content"><h2>Privacy</h2><p>Your use of the Offerings is subject to these Terms and <a href="#">Procore's Privacy Notice.</a></p></div></section><section class="otnotice-section" id="otnotice-section-7844762d-8fc2-41e8-b4d2-d50ffbd7477d"><div class="otnotice-section-content"><h2>Translations</h2><p>We may translate these Terms into other languages for your convenience. Nevertheless, the English version governs your relationship with Procore, and any inconsistencies among the different versions will be resolved in favor of the English version.</p></div></section><section class="otnotice-section" id="otnotice-section-feb17073-ca39-4cb8-96bc-7d14ec8607d2"><div class="otnotice-section-content"><h2>Modifications to Terms</h2><p>Procore may, in its sole discretion, modify or revise these Terms, including without limitation Procore's Privacy Notice and any referenced policies, at any time by posting the amended terms on the Offerings or otherwise linking to them in the Offerings. Procore additionally may either: (1) notify you via the contact information associated with your account if you have registered with the Offerings (you must ensure that Procore's email is not filtered from your Inbox by your ISP or email software), or (2) post the date of the update on the Terms, Privacy Notice, or other applicable policies. You agree that your use of the Offerings after the date on which the Terms changed will constitute your acceptance of the updated Terms, and that you agree to be bound by such modifications or revisions.</p></div></section><section class="otnotice-section" id="otnotice-section-2a1362f0-a330-44a3-879d-41bc55697cfa"><div class="otnotice-section-content"><h2>Copyright Notice</h2><h4>Reporting Claims of Copyright Infringement</h4><p>Procore takes claims of copyright infringement seriously. We will respond to notices of alleged copyright infringement that comply with applicable law. If you believe any materials accessible on or from the Offerings infringe your copyright, you may request removal of those materials (or access to them) from the Offerings by submitting written notification to our Copyright Agent (designated below). In accordance with the Online Copyright Infringement Liability Limitation Act of the Digital Millennium Copyright Act (17 U.S.C. § 512) (“DMCA“), the written notice (the “DMCA Notice”) must include substantially the following:</p><ul class="ul-default"><li>Your physical or electronic signature</li><li>Identification of the copyrighted work you believe has been infringed or, if the claim involves multiple works on the Offerings, a representative list of such works</li><li>Identification of the material you believe to be infringing, in a sufficiently precise manner to allow us to locate that material</li><li>Adequate information to allow us to contact you (including your name, postal address, telephone number, and, if available, email address)</li><li>A statement that you have a good-faith belief that use of the copyrighted material is not authorized by the copyright owner, its agent, or the law</li><li>A statement that the information in the written notice is accurate</li><li>A statement, under penalty of perjury, that you are authorized to act on behalf of the copyright owner</li></ul><p>DMCA Notices may be sent to our designated Copyright Agent at:</p><p>Copyright Agent<br>Procore Technologies, Inc.<br>6309 Carpinteria Avenue<br>Carpinteria, CA 93013 USA<br>dmca@procore.com</p><p>If you fail to comply with all the requirements of Section 512(c)(3) of the DMCA, your DMCA Notice may not be effective.</p><p>Please be aware that if you knowingly materially misrepresent that material or activity on the Offerings is infringing your copyright, you may be held liable for damages (including costs and attorneys' fees) under Section 512(f) of the DMCA.</p><p>It is Procore's policy to respond to notices of alleged copyright infringement that comply with DMCA per this Copyright Notice. Your acceptance of these Terms is also your consent to the copyright practices described in this Copyright Notice. Procore may terminate any user's access to the Offerings if Procore determines that a user is a repeat infringer.</p><h4>Counter-Notice</h4><p>If you believe that a notice of copyright infringement has been improperly submitted against you, you may submit a Counter-Notice, pursuant to Sections 512(g)(2) and (3) of the Digital Millennium Copyright Act. You may provide a written communication which contains:</p><ol class="ol-default"><li>Your physical or electronic signature;</li><li>Identification of the material removed or to which access has been disabled;</li><li>A statement under penalty of perjury that you have a good-faith belief that removal or disablement of the material was a mistake or that the material was misidentified; and</li><li>Your full name, your email address, your mailing address, and a statement that you consent to the jurisdiction of the Federal District court (1) in the judicial district where your address is located if the address is in the United States, or (2) located in the Central District of California (Los Angeles County) if your address is located outside the United States, and that you will accept service of process from the complainant submitting the notice or their authorized agent.</li></ol><p>Please submit your Counter-Notice to Procore’s Copyright Agent at the address specified above.</p><h4>Repeat Infringers</h4><p>In appropriate circumstances, Procore will disable and/or terminate the accounts of users who are repeat infringers.</p></div></section><section class="otnotice-section" id="otnotice-section-d8177093-04f2-449e-8df4-9f7376aa4f26"><div class="otnotice-section-content"><h2>Insurance Special Terms</h2><p>As part of and including in its Offerings, Procore offers insurance-related products and services (including both insurance and surety products) through its appropriately licensed and authorized subsidiary, Procore Insurance Services, Inc. (“Insurance Offerings”). In addition to the User Terms of Services, your use of any Insurance Offerings and use of or access to the <a href="#">https://www.procore.com/insurance</a> website and any other website on which the User Terms of Service and these Insurance Special Terms appear is governed by these Insurance Special Terms.</p><h4>Insurance Offerings</h4><p>With respect to the Insurance Offerings, any modeling, analytics, or projections are subject to inherent uncertainty, and the Procore analysis could be materially affected if any underlying assumptions, conditions, information, or factors are inaccurate or incomplete or should change. Procore makes no representation or warranty concerning the application of insurance contract wording or the financial condition or solvency of insurers or reinsurers. Procore makes no assurances regarding the availability, cost, or terms of insurance coverage. Although Procore may provide advice and recommendations, all decisions regarding the amount, type or terms of coverage are the ultimate responsibility of the insurance purchaser, who must decide on the specific coverage that is appropriate to its particular circumstances and financial position. Any opinions are subject to change without notice and may differ or be contrary to opinions expressed by other business areas or members of Procore as a result of using different assumptions and criteria. Procore is not under any obligation to update or keep current the information about products, services and solutions contained on Procore websites.</p><p>As part of our Insurance Offerings, Procore Risk Advisors, (producing insurance contracts under the name Procore Insurance Services, Inc.) provides certain insurance producing, risk management, underwriting management, and other consulting services, pursuant to which it may receive remuneration as commissions or fees paid by an insurer; fees paid by a client in lieu of, or in addition to, commissions; and investment income on premiums, claim payments and return premiums temporarily held as fiduciary funds, in certain circumstances.</p><p>If you have any questions regarding the nature or amount of the compensation paid to Procore Insurance Services, Inc. with respect to our Insurance Offerings on your account, we encourage you to contact us.</p><p>In addition, as part of our Insurance Offerings, Procore has committed to provide, upon request, detailed year-end summary information to our clients on compensation we receive from insurers or other third parties in connection with the placement, renewal, consultation on or servicing of that respective client’s insurance contracts.</p><h4>Services and Content</h4><p>Insurance Offerings may not be available in all countries or U.S. states. For further details about our licenses, please refer to our Licensing page.</p><p>Procore makes no guarantee, representation or warranty that all Insurance Offerings described on Procore websites are appropriate or available for use in your country or state. Some Insurance Offerings may not be available in all countries or U.S. states where Procore has business activities. Furthermore, some Insurance Offerings may only be available to certain categories of persons or corporate entities. Therefore, please read carefully the relevant description on the respective Procore websites about the Insurance Offerings or request further information about the relevant Insurance Offering.</p><p>Content available on the Procore websites or Insurance Offerings have no regard to the specific objectives, financial situation or particular needs of any specific recipient. Procore makes no guarantee, representation, or warranty that any Insurance Offerings discussed or described on the Procore websites are suitable for any individual or corporate recipient. No representation or warranty, either express or implied, is provided in relation to the accuracy, completeness or reliability of content, nor is the content a complete statement of the Insurance Offerings, markets or developments referred to therein. Content should not be regarded by recipients as a substitute for the exercise of their judgment or as actuarial, tax, accounting, or legal advice. Any statements concerning actuarial, tax, accounting, or legal matters are based solely on our experience as insurance producers and risk consultants and are not to be relied upon as actuarial, tax, accounting, or legal advice, for which you should consult your own professional advisors.</p><p>Except as separately agreed with you in writing, Procore may: (1) change, suspend or discontinue any of our Insurance Offerings; and/or (2) modify the prices of Paid Offerings (inclusive of Insurance Offerings), effective prospectively upon reasonable notice to the extent allowed under the law. Except as required by law, Procore has no obligation to retain or provide you with copies of your Content.</p><h4>Collection, Transfer, &amp; Use of Data</h4><p>In addition to any other acknowledgment or agreement made with respect the sharing of your Content, you further acknowledge and agree that Procore is authorized to share your Content and information you submit to Procore with its subsidiaries, affiliates, services providers, and business partners (including but not limited to insurance carriers) for the purposes of providing the Insurance Offerings and for Procore’s internal purposes to improve the products and services offered to you.</p><p>While providing the Insurance Offerings to you, Procore may also collect information about you in several ways, including from you directly, automatically when you engage with the Insurance Offerings, or through third parties.</p><p>For the avoidance of doubt, Procore is not responsible for using any of your Content and any other information you submit to Procore to independently verify information provided by you in connection with the placement or ongoing monitoring of any insurance and/or surety product or service and nothing in the foregoing relieves you of your obligations to provide comprehensive and truthful information to Procore and the applicable insurance carriers.</p></div></section></div><div class="otnotice-version"><span class="otnotice-timestamp">TIMESTAMP</span></div></div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest("a");
+      if (!a) return;
+      var href = a.getAttribute("href");
+      if (!href || href === "#") { e.preventDefault(); return; }
+      if (href.startsWith("#")) return; // allow in-page section jumps
+      if (href.endsWith(".html")) return; // allow local pages
+      if (/^(https?:|mailto:|tel:|\/\/)/i.test(href)) e.preventDefault();
+    }, true);
+  </script>
 </body>
 </html>

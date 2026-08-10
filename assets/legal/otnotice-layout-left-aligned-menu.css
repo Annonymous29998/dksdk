@@ -1,0 +1,65 @@
+@charset "UTF-8";
+.otnotice-menu {
+  width: 310px;
+  max-height: 80%;
+  overflow-y: auto;
+  background: #F8F8F8;
+  border: 1px solid #EEEEEE;
+  -moz-box-shadow: 0px 7px 10px 0px rgba(124, 124, 124, 0.2);
+  box-shadow: 0px 7px 10px 0px rgba(124, 124, 124, 0.2);
+  margin-left: 50px;
+  padding-top: 39px;
+  padding-left: 28px;
+  padding-right: 19px;
+  padding-bottom: 49px;
+  display: block;
+  position: fixed;
+}
+.otnotice-menu > .otnotice-menu-section {
+  margin-bottom: 30px;
+  list-style: none !important;
+  width: 225px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 19px;
+}
+.otnotice-menu > .otnotice-menu-section a {
+  text-decoration: none !important;
+  color: #696969 !important;
+  margin-bottom: 10px;
+}
+
+.otnotice-sections {
+  margin-left: 400px;
+  margin-right: 50px;
+}
+
+.otnotice-sections > .otnotice-section {
+  position: relative;
+}
+.otnotice-sections > .otnotice-section > h2.otnotice-section-header {
+  color: #696969;
+  font-size: 16px;
+  font-weight: bolder;
+  line-height: 19px;
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+.otnotice-sections > .otnotice-section > .otnotice-section-content {
+  margin-left: 40px;
+}
+.otnotice-sections > .otnotice-section > .otnotice-icon {
+  position: absolute;
+  top: -5px;
+  font-size: 30px;
+  color: #B4B4B4;
+}
+
+.otnotice-version {
+  float: right;
+  margin-right: 50px;
+  margin-bottom: 50px;
+}
+.otnotice-version > .otnotice-timestamp:before {
+  content: " ";
+}

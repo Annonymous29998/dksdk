@@ -1,0 +1,329 @@
+@font-face {
+  font-family: "otnotice-icons";
+  src: url("https://privacyportal-cdn.onetrust.com/privacy-notice-scripts/icons/otnotice-icons.eot?qnwf9l");
+  src: url("https://privacyportal-cdn.onetrust.com/privacy-notice-scripts/icons/otnotice-icons.eot?qnwf9l#iefix") format("embedded-opentype"), url("https://privacyportal-cdn.onetrust.com/privacy-notice-scripts/icons/otnotice-icons.ttf?qnwf9l") format("truetype"), url("https://privacyportal-cdn.onetrust.com/privacy-notice-scripts/icons/otnotice-icons.woff?qnwf9l") format("woff"), url("https://privacyportal-cdn.onetrust.com/privacy-notice-scripts/icons/otnotice-icons.svg?qnwf9l#otnotice-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+.otnotice-icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "otnotice-icons" !important;
+  speak-as: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.otnotice-icon-archive:before {
+  content: "\e900";
+}
+
+.otnotice-icon-automation:before {
+  content: "\e901";
+}
+
+.otnotice-icon-contact:before {
+  content: "\e902";
+}
+
+.otnotice-icon-data-protection:before {
+  content: "\e903";
+}
+
+.otnotice-icon-data:before {
+  content: "\e904";
+}
+
+.otnotice-icon-edit:before {
+  content: "\e905";
+}
+
+.otnotice-icon-erase:before {
+  content: "\e906";
+}
+
+.otnotice-icon-identity:before {
+  content: "\e907";
+}
+
+.otnotice-icon-information:before {
+  content: "\e908";
+}
+
+.otnotice-icon-law:before {
+  content: "\e909";
+}
+
+.otnotice-icon-object:before {
+  content: "\e90a";
+}
+
+.otnotice-icon-privacy-notice:before {
+  content: "\e90b";
+}
+
+.otnotice-icon-privacy:before {
+  content: "\e90c";
+}
+
+.otnotice-icon-rescrict-processing:before {
+  content: "\e90d";
+}
+
+.otnotice-icon-scale:before {
+  content: "\e90e";
+}
+
+.otnotice-icon-sharing:before {
+  content: "\e90f";
+}
+
+.otnotice-icon-time:before {
+  content: "\e910";
+}
+
+.otnotice-icon-transfer:before {
+  content: "\e911";
+}
+
+.otnotice-icon-users:before {
+  content: "\e912";
+}
+
+.otnotice-icon-world:before {
+  content: "\e913";
+}
+
+.otnotice-content {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+.otnotice-content *,
+.otnotice-content *:before,
+.otnotice-content *:after {
+  box-sizing: inherit;
+}
+.otnotice-content .otnotice-sections > .otnotice-section {
+  padding: 0;
+}
+.otnotice-content .otnotice-sections .otnotice-section-content h1,
+.otnotice-content .otnotice-sections .otnotice-section-content h2,
+.otnotice-content .otnotice-sections .otnotice-section-content h3,
+.otnotice-content .otnotice-sections .otnotice-section-content h4,
+.otnotice-content .otnotice-sections .otnotice-section-content h5,
+.otnotice-content .otnotice-sections .otnotice-section-content h6 {
+  margin: 0 0 0.5rem;
+  border: 0;
+  padding: 0;
+}
+.otnotice-content .otnotice-sections .otnotice-section-content p {
+  margin: 0 0 1rem;
+}
+.otnotice-content .otnotice-sections .otnotice-section-content ol,
+.otnotice-content .otnotice-sections .otnotice-section-content ul {
+  margin: 0 0 1rem;
+  padding-inline: 2.5rem;
+}
+.otnotice-content .otnotice-sections .otnotice-section-content li,
+.otnotice-content .otnotice-sections .otnotice-section-content blockquote,
+.otnotice-content .otnotice-sections .otnotice-section-content pre {
+  margin: 0 0 0.5rem;
+}
+.otnotice-content .otnotice-sections .otnotice-section-content b,
+.otnotice-content .otnotice-sections .otnotice-section-content strong {
+  font-weight: bolder;
+}
+.otnotice-content .otnotice-sections .otnotice-section-content img {
+  vertical-align: middle;
+  border-style: none;
+}
+.otnotice-content .otnotice-sections .otnotice-section-content img.fr-dib {
+  display: block;
+  margin: 0.3rem auto;
+}
+.otnotice-content .otnotice-sections .otnotice-section-content img.fr-fil {
+  margin-left: 0.3rem;
+  text-align: left;
+}
+.otnotice-content .otnotice-sections .otnotice-section-content img.fr-fir {
+  margin-right: 0.3rem;
+  text-align: right;
+}
+.otnotice-content .otnotice-sections .otnotice-section-content i {
+  margin: 0 0.5rem 0 0;
+  padding: 0;
+}
+.otnotice-content .otnotice-sections .otnotice-section-content pre {
+  background-color: #f0f0f0;
+  white-space: pre-wrap;
+  border-radius: 0.2rem;
+  margin: 0.3rem;
+  padding: 0.3rem;
+}
+
+.otnotice-content .ql-bg-black {
+  background-color: #000;
+}
+.otnotice-content .ql-bg-red {
+  background-color: #e60000;
+}
+.otnotice-content .ql-bg-orange {
+  background-color: #f90;
+}
+.otnotice-content .ql-bg-yellow {
+  background-color: #ff0;
+}
+.otnotice-content .ql-bg-green {
+  background-color: #008a00;
+}
+.otnotice-content .ql-bg-blue {
+  background-color: #06c;
+}
+.otnotice-content .ql-bg-purple {
+  background-color: #93f;
+}
+.otnotice-content .ql-color-white {
+  color: #fff;
+}
+.otnotice-content .ql-color-red {
+  color: #e60000;
+}
+.otnotice-content .ql-color-orange {
+  color: #f90;
+}
+.otnotice-content .ql-color-yellow {
+  color: #ff0;
+}
+.otnotice-content .ql-color-green {
+  color: #008a00;
+}
+.otnotice-content .ql-color-blue {
+  color: #06c;
+}
+.otnotice-content .ql-color-purple {
+  color: #93f;
+}
+
+.otnotice-content .ql-align-center {
+  text-align: center;
+}
+.otnotice-content .ql-align-justify {
+  text-align: justify;
+}
+.otnotice-content .ql-align-right {
+  text-align: right;
+}
+.otnotice-content blockquote {
+  border-left: 4px solid #ccc;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding-left: 16px;
+}
+
+.otnotice-content .ql-indent-1 {
+  padding-left: 3em;
+}
+.otnotice-content li.ql-indent-1 {
+  padding-left: 4.5em;
+}
+.otnotice-content .ql-indent-2 {
+  padding-left: 6em;
+}
+.otnotice-content li.ql-indent-2 {
+  padding-left: 7.5em;
+}
+.otnotice-content .ql-indent-3 {
+  padding-left: 9em;
+}
+.otnotice-content li.ql-indent-3 {
+  padding-left: 10.5em;
+}
+.otnotice-content .ql-indent-4 {
+  padding-left: 12em;
+}
+.otnotice-content li.ql-indent-4 {
+  padding-left: 13.5em;
+}
+.otnotice-content .ql-indent-5 {
+  padding-left: 15em;
+}
+.otnotice-content li.ql-indent-5 {
+  padding-left: 16.5em;
+}
+.otnotice-content .ql-indent-6 {
+  padding-left: 18em;
+}
+.otnotice-content li.ql-indent-6 {
+  padding-left: 19.5em;
+}
+.otnotice-content .ql-indent-7 {
+  padding-left: 21em;
+}
+.otnotice-content li.ql-indent-7 {
+  padding-left: 22.5em;
+}
+.otnotice-content .ql-indent-8 {
+  padding-left: 24em;
+}
+.otnotice-content li.ql-indent-8 {
+  padding-left: 25.5em;
+}
+.otnotice-content .ql-indent-9 {
+  padding-left: 27em;
+}
+.otnotice-content li.ql-indent-9 {
+  padding-left: 28.5em;
+}
+
+.otnotice-content {
+  width: 100%;
+}
+.otnotice-content .otnotice-section .otnotice-section-content tr,
+.otnotice-content .otnotice-section .otnotice-section-content td {
+  border: 1px solid #ccc;
+}
+.otnotice-content .otnotice-section .otnotice-section-content .ot-notice-layer-break-container .ot-notice-close-layer-breaker {
+  display: none;
+}
+.otnotice-content .otnotice-section .otnotice-section-content .ot-notice-layer-break-container .ot-notice-layer-breaker-header {
+  cursor: pointer;
+  text-align: left;
+  font-weight: bold;
+}
+.otnotice-content .otnotice-section .otnotice-section-content .ot-notice-layer-break-container .ot-notice-layer-breaker-header::after {
+  content: " +";
+  font-size: 20px;
+  font-weight: bolder;
+}
+.otnotice-content .otnotice-section .otnotice-section-content .ot-notice-layer-break-container .ot-notice-layer-breaker-align__right {
+  text-align: right;
+}
+.otnotice-content .otnotice-section .otnotice-section-content .ot-notice-layer-break-container .ot-notice-layer-breaker-align__center {
+  text-align: center;
+}
+.otnotice-content .otnotice-section .otnotice-section-content .ot-notice-layer-break-container .ot-notice-layer-breaker-header.active::after {
+  content: " -";
+  font-size: 25px;
+  font-weight: bolder;
+}
+.otnotice-content .otnotice-section .otnotice-section-content .ot-notice-layer-break-container .ot-notice-layer-breaker-content {
+  display: none;
+  overflow: hidden;
+}
+.otnotice-content .otnotice-section .otnotice-section-content .ot-notice-layer-break-container .ot-notice-layer-breaker-footer {
+  display: none;
+}
+
+.otnotice-language-dropdown-container {
+  width: 100%;
+  text-align: right;
+}
